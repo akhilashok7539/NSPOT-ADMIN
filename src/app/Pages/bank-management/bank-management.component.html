@@ -1,0 +1,94 @@
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+    <h3 class="text-themecolor">Bank Details</h3>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row text-center mt-5">
+    <div class="alert alert-warning" *ngIf="bankItems?.length==0">No bank details available.</div>
+
+    <!-- <pre>{{bankItems|json}}</pre> -->
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Account Holder's Name</th>
+          <th>Account No</th>
+          <th>IFSC</th>
+          <th>Razorpay ID</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of bankItems; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.accountNumber}}</td>
+          <td>{{item.ifsc}}</td>
+          <td>{{item.razorpay_linkedAccount_id}}</td>
+          <td><i class="mdi mdi-table-edit" (click)="edit(item)"></i></td>
+
+        </tr>
+      </tbody>
+      <tbody>
+
+      </tbody>
+    </table>
+
+
+
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2" *ngIf="eidtMode">
+      <form class="form-horizontal form-material" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="card">
+          <div class="card-header text-center align-content-center">
+            <label class="req uppercase">Update Account Details</label>
+            <div class="pull-right cursore-pointer" (click)="eidtMode=false">x</div>
+          </div>
+          <div class="card-body">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="">Account Number</label>
+                <input type="text" formControlName="accountNumber" placeholder="Account Number"
+                  class="form-control form-control-line" />
+                <app-control-messages [touched]="touched" [control]="f.accountNumber"></app-control-messages>
+              </div>
+
+              <div class="form-group">
+                <label for="">Account holder name</label>
+                <input type="text" formControlName="name" placeholder="Account holder name"
+                  class="form-control form-control-line" />
+                <app-control-messages [touched]="touched" [control]="f.name"></app-control-messages>
+              </div>
+
+              <div class="form-group">
+                <label for="">IFSC</label>
+                <input type="text" formControlName="ifsc" placeholder="IFSC" class="form-control form-control-line" />
+                <app-control-messages [touched]="touched" [control]="f.ifsc"></app-control-messages>
+              </div>
+
+              <div class="form-group">
+                <label for="">razorpay_linkedAccount_id</label>
+                <input type="text" formControlName="razorpay_linkedAccount_id" placeholder=""
+                  class="form-control form-control-line" />
+                <app-control-messages [touched]="touched" [control]="f.razorpay_linkedAccount_id">
+                </app-control-messages>
+              </div>
+
+              <div class="float-right">
+                <button class="btn btn-info mt-3 pull-right" id="submit-btn">UPDATE ACCOUNT</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>

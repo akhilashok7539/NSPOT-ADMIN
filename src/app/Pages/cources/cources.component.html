@@ -1,0 +1,45 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 class="text-themecolor">Course Management</h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row text-center mt-5">
+        <div class="alert alert-warning" *ngIf="bankItems?.length==0">No Courses available.</div>
+
+        <!-- <pre>{{bankItems|json}}</pre> -->
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Course Name</th>
+                    <th>Account No</th>
+                    <th>IFSC</th>
+                    <th>Razorpay ID</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of bankItems; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.accountNumber}}</td>
+                    <td>{{item.ifsc}}</td>
+                    <td>{{item.razorpay_linkedAccount_id}}</td>
+                    <td><i class="mdi mdi-table-edit" (click)="edit(item)"></i></td>
+
+                </tr>
+            </tbody>
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+
+</div>

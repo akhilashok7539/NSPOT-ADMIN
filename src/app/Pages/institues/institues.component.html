@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="page-heading text-center">
+                <h2 class="uppercase">All Institutes</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row text-center mt-5">
+
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Institute Name</th>
+                    <th>Location</th>
+
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of institutes; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.title}}</td>
+                    <td></td>
+
+                    <td>
+
+                        <button class="btn btn-dark" (click)="view(item)">View Courses</button> &nbsp;
+
+                        <button class="btn btn-success">Edit</button> &nbsp;
+
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
+
+                </tr>
+            </tbody>
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+</div>
