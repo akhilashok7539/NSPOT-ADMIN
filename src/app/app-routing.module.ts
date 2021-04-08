@@ -7,6 +7,8 @@ import { BankManagementComponent } from './Pages/bank-management/bank-management
 import { CategorysComponent } from './Pages/categorys/categorys.component';
 import { CourcesComponent } from './Pages/cources/cources.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
+import { AddDeskComponent } from './Pages/differnet-desks/add-desk/add-desk.component';
+import { DiffernetDesksComponent } from './Pages/differnet-desks/differnet-desks.component';
 import { InstituesComponent } from './Pages/institues/institues.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { SettingsComponent } from './Pages/settings/settings.component';
@@ -27,6 +29,9 @@ const routes: Routes = [
       { path: 'settings', component: SettingsComponent },
       { path: 'categorys', component: CategorysComponent },
       { path: 'courses', component: CourcesComponent },
+    { path: 'school-desk', component: DiffernetDesksComponent },
+    { path: 'add-desk', component: AddDeskComponent },
+
 
     ],
   },

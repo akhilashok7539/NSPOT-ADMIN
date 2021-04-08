@@ -26,6 +26,8 @@ import { ViewCoursesAcademiclevelComponent } from './Pages/accademic-level-cours
 import { InstituesComponent } from './Pages/institues/institues.component';
 import { CategorysComponent } from './Pages/categorys/categorys.component';
 import { CourcesComponent } from './Pages/cources/cources.component';
+import { DiffernetDesksComponent } from './Pages/differnet-desks/differnet-desks.component';
+import { AddDeskComponent } from './Pages/differnet-desks/add-desk/add-desk.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { CourcesComponent } from './Pages/cources/cources.component';
     ViewCoursesAcademiclevelComponent,
     InstituesComponent,
     CategorysComponent,
-    CourcesComponent
+    CourcesComponent,
+    DiffernetDesksComponent,
+    AddDeskComponent
   ],
   imports: [
     BrowserModule,
