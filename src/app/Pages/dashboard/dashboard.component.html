@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <button class="btn btn-warning" style="    display: block;
+    margin-left: auto;
+    margin-bottom: 24px;" routerLink="/add">Add Desk Type</button>
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let s of desktype">
+            <div class="card" (click)="view(s)">
+                <img src="https://img.icons8.com/bubbles/100/000000/opened-folder.png" style="margin:0 auto;" />
+                <h6>{{s.title}}</h6>
+                <!-- <div class="row">
+                    <button matTooltip="Info about the action" class="edit" style="   background: #fce0a2;
+                    border: none;
+                    border-radius: 22px;
+                    margin-left: auto;
+                "><i  class="fa fa-pencil"></i></button> &nbsp;
+                    <button style="   background: #fce0a2;
+                    border: none;
+                    border-radius: 22px;
+                    margin-right: auto;
+                "><i  class="fa fa-trash"></i></button>
+                </div> -->
+
+
+            </div>
+
+        </div>
+        <!-- <div class="col-lg-4">
+            <div class="card">
+                <img src="https://img.icons8.com/bubbles/100/000000/opened-folder.png" style="margin:0 auto;" />
+                <h6>School Admission Desk</h6>
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <img src="https://img.icons8.com/bubbles/100/000000/opened-folder.png" style="margin:0 auto;" />
+                <h6>Degree Courses Regular</h6>
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <img src="https://img.icons8.com/bubbles/100/000000/opened-folder.png" style="margin:0 auto;" />
+                <h6>Degree Courses Distance</h6>
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <img src="https://img.icons8.com/bubbles/100/000000/opened-folder.png" style="margin:0 auto;" />
+                <h6>Diploma Courses Addmission</h6>
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <img src="https://img.icons8.com/bubbles/100/000000/opened-folder.png" style="margin:0 auto;" />
+                <h6>Certificate Courses Addmission</h6>
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <img src="https://img.icons8.com/bubbles/100/000000/opened-folder.png" style="margin:0 auto;" />
+                <h6>Entrance Exam Courses</h6>
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <img src="https://img.icons8.com/bubbles/100/000000/opened-folder.png" style="margin:0 auto;" />
+                <h6>Competitive Exam Courses</h6>
+
+            </div>
+        </div> -->
+    </div>
+</div>

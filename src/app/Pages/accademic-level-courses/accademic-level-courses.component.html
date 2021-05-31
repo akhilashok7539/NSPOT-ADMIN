@@ -1,0 +1,174 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-6">
+
+            <div class="page-heading text-center">
+                <h2 class="uppercase">Academic Levels management</h2>
+            </div>
+            <!-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="alert alert-warning" *ngIf="levels?.length<=0">No Accademic Levels added.</div>
+                    <div *ngFor="let item of levels">
+                        <div class="card cursor " [ngClass]="{'active-test':selectedLevelId==item.id}" (click)="onSelectingLevel(item.id)">
+                            <h4 class="question-wrapper">{{item.title}} <span class="pull-right">>></span></h4>
+                         
+                        </div>
+                    </div>
+
+
+                    <form class="contact" [formGroup]="formAccademicLevel" (ngSubmit)="onSubmitLevel()">
+                        <div class="card ">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label class="uppercase">Add New Accademic Level</label>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-line" formControlName="title" />
+                                        <app-control-messages [touched]="touchedAccademicLevel" [control]="f.title">
+                                        </app-control-messages>
+                                    </div>
+
+
+                                    <div class="float-right">
+                                        <button class="btn btn-info mt-3 pull-right" type="submit" id="submit-btn-test">ADD</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> -->
+
+
+            <!-- <div class="col-lg-6">
+            <div class="page-heading text-center">
+                <h2 class="uppercase">Courses</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="alert alert-warning" *ngIf="!selectedLevelId">No accademic level selected. please select an accademic level from the previous menu</div>
+                   
+
+
+                    <div *ngIf="selectedLevelId">
+                        <div class="alert alert-warning" *ngIf="courses?.length<=0">No questions added to this test.
+                        </div>
+                        <table class="table card" *ngFor="let item of courses; let i=index">
+                            <tbody>
+                                <tr>
+                                    <td>{{i+1}})</td>
+                                    <td colspan="2">{{item.title}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                  
+                        <form class="contact-test" [formGroup]="formCourse" (ngSubmit)="onSubmitCourse()">
+                            <div class="card ">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <label class="uppercase">New Course</label>
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>1)</td>
+                                                    <td colspan="2">
+                                                        <input type="text" formControlName="title" placeholder="enter question" required />
+                                                        <app-control-messages [touched]="touchedFormQuestion" [control]="q.question">
+                                                        </app-control-messages>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+
+
+
+
+                                        <div class="float-right">
+                                            <button class="btn btn-info mt-3 pull-right" id="submit-btn-question">ADD
+                        QUESTION</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        </div>
+        <div class="col-sm-6">
+            <button class="btn btn-primary" style="float: right;" (click)="add()">Add Academic Levels </button>
+
+        </div>
+        <div class="col-sm-12">
+            <form *ngIf="addButtonPressed == true" class="contact" [formGroup]="formAccademicLevel" (ngSubmit)="onSubmitLevel()">
+                <div class="card ">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label class="uppercase">Add New Academic Level</label>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-line" formControlName="title" />
+                                <app-control-messages [touched]="touchedAccademicLevel" [control]="f.title">
+                                </app-control-messages>
+                            </div>
+
+
+                            <div class="float-right">
+                                <button class="btn btn-info mt-3 pull-right" type="submit" id="submit-btn-test">ADD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row text-center mt-5">
+
+
+
+        <table class="table">
+            <thead style=" background: white;">
+                <tr>
+                    <th>No</th>
+                    <th>Accademic Levels</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of levels; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.title}}</td>
+
+                    <td>
+                        <button class="btn btn-dark" (click)="view(item)">View Courses</button> &nbsp;
+
+                        <button class="btn btn-success">Edit</button> &nbsp;
+
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
+
+                </tr>
+            </tbody>
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+</div>

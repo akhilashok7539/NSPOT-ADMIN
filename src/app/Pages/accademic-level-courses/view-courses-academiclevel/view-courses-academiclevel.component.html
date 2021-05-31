@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- ***************** Listing Tests && adding test ************  -->
+        <div class="col-lg-12">
+            <!-- <pre>{{tests|json}}</pre> -->
+            <div class="page-heading text-center">
+                <h2 class="uppercase">Accademic Levels management - {{course.title}}</h2>
+                <button *ngIf="formview == false" class="btn btn-primary" style="    float: right;" (click)="add()"> Add</button>
+            </div>
+
+            <form *ngIf="formview == true" class="contact-test" [formGroup]="formCourse">
+                <div class="card ">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label class="uppercase">New Course</label>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>1)</td>
+                                        <td colspan="2">
+                                            <input type="text" formControlName="title" [(ngModel)]="title" placeholder="enter question" required />
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+
+
+
+
+                            <div class="float-right">
+                                <button class="btn btn-info mt-3 pull-right" id="submit-btn-question" (click)="onSubmitCourse()">ADD
+            QUESTION</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row text-center mt-5">
+
+
+
+        <table class="table">
+            <thead style=" background: white;">
+                <tr>
+                    <th>No</th>
+                    <th>Accademic Levels</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of academiclevelCourses; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.title}}</td>
+
+                    <td>
+
+
+                        <button class="btn btn-success">Edit</button> &nbsp;
+
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
+
+                </tr>
+            </tbody>
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+</div>
