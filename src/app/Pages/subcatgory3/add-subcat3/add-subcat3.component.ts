@@ -14,7 +14,7 @@ export class AddSubcat3Component implements OnInit {
   constructor(private apiservice:ApiService,private Toaster:ToastrService) { }
 
   ngOnInit(): void {
-    this.catgroryarray = JSON.parse(sessionStorage.getItem("subcat2"));
+    this.catgroryarray = JSON.parse(sessionStorage.getItem("subcat3"));
     this.catname = this.catgroryarray.title;
   }
   submit(){
