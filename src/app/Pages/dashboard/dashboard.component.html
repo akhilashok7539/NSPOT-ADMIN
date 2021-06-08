@@ -4,9 +4,9 @@
     margin-bottom: 24px;" routerLink="/add">Add Desk Type</button>
     <div class="row">
         <div class="col-lg-4" *ngFor="let s of desktype">
-            <div class="card" (click)="view(s)">
+            <div class="card" (click)="view(s)" style="background-color: #242a33;">
                 <img src="https://img.icons8.com/bubbles/100/000000/opened-folder.png" style="margin:0 auto;" />
-                <h6>{{s.title}}</h6>
+                <h6 style="color: white;">{{s.title}}</h6>
                 <!-- <div class="row">
                     <button matTooltip="Info about the action" class="edit" style="   background: #fce0a2;
                     border: none;
