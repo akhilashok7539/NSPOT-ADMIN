@@ -18,28 +18,28 @@
 
         <table class="table">
             <thead>
-                <tr>
+                <tr style="border-bottom: 4px solid #0000001f;">
                     <th>No</th>
                     <th>Institute Name</th>
                     <th>Location</th>
-
-                    <th>Action</th>
+                    <th>Joined On</th>
+                    <th style="text-align: center;">Action</th>
 
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let item of institutes; let i=index">
                     <td>{{i+1}}</td>
-                    <td>{{item.title}}</td>
-                    <td></td>
-
+                    <td>{{item.name}}</td>
+                    <td>{{item.nameofTown}}</td>
+                    <td>{{item.createdAt | date:'dd MMM yyyy'}}</td>
                     <td>
 
-                        <button class="btn btn-dark" (click)="view(item)">View Courses</button> &nbsp;
+                        <button class="btn btn-dark" routerLink="/institute-detailed/{{item.id}}">View Details</button> &nbsp;
 
-                        <button class="btn btn-success">Edit</button> &nbsp;
+                        <button class="btn btn-danger">Deactivated</button> &nbsp;
 
-                        <button class="btn btn-danger">Delete</button>
+                        <!-- <button class="btn btn-success">Activated</button> -->
                     </td>
 
                 </tr>

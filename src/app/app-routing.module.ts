@@ -26,6 +26,7 @@ import { EditSubcat4Component } from './Pages/subcatgory4/edit-subcat4/edit-subc
 import { AddSubcat5Component } from './Pages/subcatgory5/add-subcat5/add-subcat5.component';
 import { EditSubcat5Component } from './Pages/subcatgory5/edit-subcat5/edit-subcat5.component';
 import { EditCategorysComponent } from './Pages/categorys/edit-categorys/edit-categorys.component';
+import { ViewDetialedComponent } from './Pages/institues/view-detialed/view-detialed.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
       { path: 'accademic-levels-and-courses', component: AccademicLevelCoursesComponent },
       { path: 'view-accademic-levels-and-courses', component: ViewCoursesAcademiclevelComponent },
       { path: 'all-institute', component: InstituesComponent },
+      { path: 'institute-detailed/:id', component: ViewDetialedComponent },
       { path: 'settings', component: SettingsComponent },
       { path: 'categorys', component: CategorysComponent },
       { path: 'edit-categorys', component: EditCategorysComponent },

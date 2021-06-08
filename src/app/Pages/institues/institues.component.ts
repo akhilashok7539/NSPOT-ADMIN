@@ -20,7 +20,7 @@ export class InstituesComponent implements OnInit {
     this.apiservice.getallInstitutes().subscribe(
       data =>{
         console.log(data);
-        
+        this.institutes = data['data']
       },
       error =>{
 

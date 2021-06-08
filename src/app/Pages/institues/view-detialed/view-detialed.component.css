@@ -1,0 +1,21 @@
+.card
+{
+    background: #242a33;
+    color: white;
+    padding: 23px;
+}
+.uppercase{
+    color: white;
+
+}
+hr{
+    background: red;
+    width: 25%;
+}
+h3{
+    color: white;
+}
+h4{
+    color: white;
+    
+}
