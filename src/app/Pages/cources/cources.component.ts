@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-cources',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cources.component.css']
 })
 export class CourcesComponent implements OnInit {
-  bankItems:any=[];
-  constructor() { }
+  courses:any=[];
+  constructor(private apiserive:ApiService) { }
 
   ngOnInit(): void {
+    this.getallcourser();
   }
 
+  getallcourser(){
+    let req= 
+    {
+
+    }
+    this.apiserive.doPostRequest(`/institute/course/filter`,req).subscribe(
+      data =>{
+        this.courses = data['data']
+      }
+    )
+  }
 }
