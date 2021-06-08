@@ -15,6 +15,8 @@ export class LoaderInterceptor implements HttpInterceptor {
         return next.handle(req).pipe(tap(
             (event: HttpEvent<any>) => {
                 if (event instanceof HttpResponse) {
+                    console.log(event);
+                    
                     this.spinner.hide();
                 }
                 // this.spinner.hide();

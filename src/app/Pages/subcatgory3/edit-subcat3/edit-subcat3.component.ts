@@ -22,7 +22,7 @@ export class EditSubcat3Component implements OnInit {
   }
   submit(){
     let req = {
-      "CourseSubCategories2Id":this.category,
+      "title":this.category,
       "id":this.id
     }
     this.apiservice.updatesubcat3(req).subscribe(
