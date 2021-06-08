@@ -11,11 +11,15 @@ import { ApiService } from 'src/app/services/api.service';
 export class Subcatgory2Component implements OnInit {
   subcat:any=[];
   catgroryarray:any = [];
+  cat1:any = [];
   catname;
+  category;
   constructor(private adminservice:ApiService,private Toaster:ToastrService,private router:Router ) { }
   ngOnInit(): void {
     this.catgroryarray = JSON.parse(sessionStorage.getItem("subcat2"));
+    this.cat1 = JSON.parse(sessionStorage.getItem("Categorys"));
     this.catname = this.catgroryarray.title;
+    this.category = this.cat1.title;
     this.getallcategorys();
   }
   getallcategorys()

@@ -12,9 +12,16 @@ export class Subcatgory3Component implements OnInit {
   subcat:any=[];
   catgroryarray:any = [];
   catname;
+  category: any;
+  cat1: any;
+  cat2:any;
   constructor(private adminservice:ApiService,private Toaster:ToastrService,private router:Router ) { }
   ngOnInit(): void {
     this.catgroryarray = JSON.parse(sessionStorage.getItem("subcat3"));
+    this.cat1 = JSON.parse(sessionStorage.getItem("Categorys"));
+    this.cat2 = JSON.parse(sessionStorage.getItem("subcat2"));
+    this.category = this.cat1.title;
+
     this.catname = this.catgroryarray.title;
     this.getallcategorys();
   }
