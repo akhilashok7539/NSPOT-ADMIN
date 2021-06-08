@@ -23,7 +23,7 @@ export class Subcatgory5Component implements OnInit {
     this.cat1 = JSON.parse(sessionStorage.getItem("Categorys"));
     this.cat2 = JSON.parse(sessionStorage.getItem("subcat2"));
     this.cat3 = JSON.parse(sessionStorage.getItem("subcat3"));
-    this.cat4 = JSON.parse(sessionStorage.getItem("subcat3"));
+    this.cat4 = JSON.parse(sessionStorage.getItem("subcat4"));
 
     this.catname = this.catgroryarray.title;
     this.getallcategorys();
