@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -52,6 +52,8 @@ import { EditSubcat5Component } from './Pages/subcatgory5/edit-subcat5/edit-subc
 // import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import {LoaderInterceptor} from './interceptors/loadingInterceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,6 +104,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     AppRoutingModule,
     FormsModule,
     MaterialModule,
+    NgxSpinnerModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     MatTooltipModule,
@@ -109,7 +112,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+  ],
   // entryComponents:[EditSubcat5Component,EditSubcat4Component,EditSubcat3Component,EditSubcat2Component,EditCategorysComponent],
 
   bootstrap: [AppComponent]
