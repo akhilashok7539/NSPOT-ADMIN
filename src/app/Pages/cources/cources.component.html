@@ -15,7 +15,13 @@
                 <tr>
                     <th>No</th>
                     <th>Course Code</th>
-                    <th>Institue</th>
+                    <th>Institue
+                        <!-- <i class="fas fa-filter" [ngClass]="{'sort_filter_active':instituteFilterSelected.length !==0}"  (click)='onFilterClick(2)'></i>
+                        <app-filter [filterArrayDetail]='instituteFilter' 
+                        (onSubmitFIlter)='oninstituteFilter($event)' (onCancel)="oninstituteFiltercancel($event)"
+                        *ngIf='onFilter === 2'></app-filter> -->
+
+                    </th>
                     <th>University Name</th>
                     <th>Principal Name</th>
                     <!-- <th>Edit</th> -->

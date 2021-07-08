@@ -27,6 +27,7 @@ import { AddSubcat5Component } from './Pages/subcatgory5/add-subcat5/add-subcat5
 import { EditSubcat5Component } from './Pages/subcatgory5/edit-subcat5/edit-subcat5.component';
 import { EditCategorysComponent } from './Pages/categorys/edit-categorys/edit-categorys.component';
 import { ViewDetialedComponent } from './Pages/institues/view-detialed/view-detialed.component';
+import { CompetitiveExamCoursesComponent } from './Pages/competitive-exam-courses/competitive-exam-courses.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -63,6 +64,8 @@ const routes: Routes = [
 
       { path: 'add-subcat5', component: AddSubcat5Component },
       { path: 'edit-subcat5', component: EditSubcat5Component },
+      { path: 'coursesforapproval', component: CompetitiveExamCoursesComponent },
+
     ],
   },
 ];

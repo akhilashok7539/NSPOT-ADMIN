@@ -64,7 +64,21 @@ export class ApiService {
       }),
     );
   }
-
+  public doPutRequest(url: any, data: any){
+    return this.http.put<any>(this.SERVER_URL + url, data, this.httpOptions).pipe(
+      map((response) => {
+        return response;
+      }),
+    );
+  }
+  // delete
+  public dodeleteRequest(url: any, data: any){
+    return this.http.delete<any>(this.SERVER_URL + url, data).pipe(
+      map((response) => {
+        return response;
+      }),
+    );
+  }
   public doPostRequest_upload(url: any, data: any) {
     // this.getAccessToken()
     const httpOptions = {

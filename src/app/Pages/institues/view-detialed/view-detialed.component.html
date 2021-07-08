@@ -228,27 +228,36 @@
         <div class="row">
             <div class="col-sm-6">
                 <h3> Institute Name : {{instituteInfo?.name}}</h3>
+                <!-- Institute Type : <span class="lessons"><i
+                    class="zmdi zmdi-assignment"></i>{{instituteInfo?.InstituteType.title}}</span>
+            <br> -->
                 <p class="class-details uppercase">
-                    Institute Type : <span class="lessons"><i
-                            class="zmdi zmdi-assignment"></i>{{instituteInfo?.InstituteType.title}}</span>
-                    <br>
+                   
                     Institute Code : <span class="duration"><i class="zmdi zmdi-time"></i>{{instituteInfo?.code}}</span>
                     <br>
 
+                   
 
 
 
 
 
                 </p>
+                <p> Principal Name  : <span class="duration"><i class="zmdi zmdi-time"></i>{{instituteInfo?.principalName}}</span></p>
             </div>
             <div class="col-sm-6">
                 <span class="views"><i class="zmdi zmdi-download"></i><a
-                        href="{{baseApiUrl}}{{highlights?.brochuresFile}}">Download Brochure</a></span>
+                        href="{{baseApiUrl}}{{highlights?.brochuresFile}}" target="_blank">Download Brochure</a></span>
                 <br>
-                <span class="views"><i class="zmdi zmdi-eye"></i>HOSTEL :
-                    {{instituteInfo?.haveBoysHostel||instituteInfo?.haveGirlsHostel?"YES":"NO"}}</span>
-                <br>
+                <P><span class="views"><i class="zmdi zmdi-eye"></i>Hostel Boys:
+                    {{instituteInfo?.haveBoysHostel||instituteInfo?.haveGirlsHostel?"YES":"NO"}}</span></P>
+               
+               
+                <P> <span class="views"><i class="zmdi zmdi-eye"></i>Hostel Girls:
+                    {{instituteInfo?.haveGirlsHostel||instituteInfo?.haveGirlsHostel?"YES":"NO"}}</span></P>
+               
+                <P><span class="views"><i class="zmdi zmdi-eye"></i>Hostel Annuval Fees:
+                    {{instituteInfo?.hostalAnnualFee}}</span></P>
             </div>
         </div>
     </div>
@@ -333,9 +342,9 @@
             <div class="col-sm-6">
 
                 <h4>REGISTRATION DETAILS</h4>
-                <p>License Authority : {{instituteInfo?.LicenceIssueAuthority.title}} </p>
+                <p>License Authority : {{instituteInfo?.LicenceIssueAuthority}} </p>
                 <p>Name of Panchatyath/Munciplaity : {{instituteInfo?.nameofTown}} </p>
-                <p> Licnese No :{{instituteInfo?.licenseNumber}} </p>
+                <p>Licnese No :{{instituteInfo?.licenseNumber}} </p>
                 <p>Licnese Issued Date : {{instituteInfo?.licenseIssuedDate | date}}</p>
                 <p>Licnese Expiary Date : {{instituteInfo?.licenseRenewalDate | date}}</p>
 

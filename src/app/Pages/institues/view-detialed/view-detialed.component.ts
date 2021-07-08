@@ -41,6 +41,7 @@ export class ViewDetialedComponent implements OnInit {
     // fetching boardof council details
     this.apiService.doGetRequest(endPoints.Get_boardOfCouncil + this.instituteId).subscribe((returnData: any) => {
       this.boardOfCouncilInfo = returnData.data;
+      console.log(this.boardOfCouncilInfo);
     }, error => {
       console.error(error);
       this.toastr.error('Failed to fetch institute details');
@@ -50,6 +51,7 @@ export class ViewDetialedComponent implements OnInit {
     this.apiService.doGetRequest(endPoints.Get_highlights + this.instituteId).subscribe((returnData: any) => {
       this.highlights = returnData.data;
       console.log("highligts", this.highlights)
+      
     }, error => {
       console.error(error);
       this.toastr.error('Failed to fetch institute details')
@@ -58,6 +60,8 @@ export class ViewDetialedComponent implements OnInit {
     // fetching social links
     this.apiService.doGetRequest(endPoints.Get_socialMedia + this.instituteId).subscribe((returnData: any) => {
       this.socialLinks = returnData.data;
+      console.log("socialLinks", this.socialLinks)
+
     }, error => {
       console.error(error);
       this.toastr.error('Failed to fetch institute details')

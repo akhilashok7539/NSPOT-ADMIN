@@ -1,6 +1,6 @@
-<div class="card ">
+<!-- <div class="card ">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-4">
             <label class="uppercase" style="    font-size: 23px;
             font-weight: bold;
             display: block;
@@ -17,6 +17,23 @@
                 display: block;
                 width: 46%;" (click)="submit()" id="submit-btn-test">Submit</button>
             </div>
+        </div>
+    </div>
+</div> -->
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+            <label class="uppercase" style="    font-size: 23px;
+            font-weight: bold;
+            display: block;
+            text-align: center;">{{type}}</label>
+            <hr>
+            <!-- <label for="" *ngIf="type == 'Add Sub Category">Sub Category</label> -->
+            <input type="text"  [(ngModel)]="category" class="form-control form-control-line" placeholder="Please enter you details" />
+            <button class="btn btn-info" style="    margin: 0 auto;
+            display: block;
+            width: 46%;
+            margin-top: 33px;" (click)="submit()" id="submit-btn-test">Submit</button>
         </div>
     </div>
 </div>

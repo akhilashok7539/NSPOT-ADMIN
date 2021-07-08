@@ -11,11 +11,12 @@ import { EditCategorysComponent } from './edit-categorys/edit-categorys.componen
   styleUrls: ['./categorys.component.css']
 })
 export class CategorysComponent implements OnInit {
-  bankItems:any=[];
-  catgroryarray:any = [];
+  categoryitems: any = [];
+  catgroryarray: any = [];
   catname;
-  constructor(private adminservice:ApiService,private Toaster:ToastrService,private router:Router,public dialog: MatDialog,
-    ) { }
+  buttonlabel = "Add Sub Category";
+  constructor(private adminservice: ApiService, private Toaster: ToastrService, private router: Router, public dialog: MatDialog,
+  ) { }
 
   ngOnInit(): void {
     this.catgroryarray = JSON.parse(sessionStorage.getItem("Categorys"));
@@ -23,37 +24,84 @@ export class CategorysComponent implements OnInit {
     this.getallcategorys();
 
   }
-  getallcategorys()
-  {
-    this.adminservice.getallCategorysbyid(this.catgroryarray.id).subscribe(
-      data =>{
-        this.bankItems = data['data'];
-      },
-      error =>{
-
-      }
-    )
-  }
-  delete(s)
-  {
-    let req = {
-      "id":s.id
+  getallcategorys() {
+    if (this.buttonlabel === "Add Sub Category") 
+    {
+      this.adminservice.getallCategorysbyid(this.catgroryarray.id).subscribe(
+        data => {
+          this.categoryitems = data['data'];
+        },
+        error => {
+  
+        }
+      )
     }
-    this.adminservice.deletecat(s.id).subscribe(
-      data =>{
-        this.Toaster.success("Deleted Successfully")
-        this.ngOnInit();
-      },
-      error =>{
-        this.Toaster.error("Unable to deleted")
-      }
-    )
+    else if (this.buttonlabel === "Add Institute Type") {
+      this.adminservice.doGetRequest(`institute-type/courseCatagory/`+this.catgroryarray.id).subscribe(
+        data => {
+          this.categoryitems = data['data'];
+        },
+        error => {
+  
+        }
+      )
+    }
+    else if (this.buttonlabel === "Add Category Type") {
+      this.adminservice.doGetRequest(`institute-categories/courseCatagory/`+this.catgroryarray.id).subscribe(
+        data => {
+          this.categoryitems = data['data'];
+        },
+        error => {
+  
+        }
+      )
+    }
+  
   }
-  addsubcat(s){
-    sessionStorage.setItem("subcat2",JSON.stringify(s));
+  delete(s) {
+
+    
+    if (this.buttonlabel === "Add Sub Category") {
+      let req = {
+        "id": s.id
+      }
+      this.adminservice.deletecat(s.id).subscribe(
+        data => {
+          this.Toaster.success("Deleted Successfully")
+          this.ngOnInit();
+        },
+        error => {
+          this.Toaster.error("Unable to deleted")
+        }
+      )
+    }
+    else if (this.buttonlabel === "Add Institute Type") {
+      // sessionStorage.setItem("type", "Edit Institute Type");
+      // sessionStorage.setItem("edit-cat1", JSON.stringify(s))
+      // this.router.navigate(['/edit-categorys'])
+    }
+    else if (this.buttonlabel === "Add Category Type") {
+      let req = {
+        "id": s.id
+      }
+      this.adminservice.dodeleteRequest(`institute-categories/delete/`+s.id,req).subscribe(
+        data => {
+          this.Toaster.success("Deleted Successfully")
+          this.ngOnInit();
+        },
+        error => {
+          this.Toaster.error("Unable to deleted")
+        }
+      )
+    }
+
+
+  }
+  addsubcat(s) {
+    sessionStorage.setItem("subcat2", JSON.stringify(s));
     this.router.navigate(['/subcat2']);
   }
-  edit(s){
+  edit(s) {
     // const dialogRef = this.dialog.open(EditCategorysComponent, {
     //   width: '400px',
     //   data: s
@@ -62,7 +110,56 @@ export class CategorysComponent implements OnInit {
     // dialogRef.afterClosed().subscribe(result => {
     //   console.log(`Dialog result closed`);
     // });
-    sessionStorage.setItem("edit-cat1",JSON.stringify(s))
+   
+    if (this.buttonlabel === "Add Sub Category") {
+      sessionStorage.setItem("type", "Edit Sub Category");
+      sessionStorage.setItem("edit-cat1", JSON.stringify(s))
+      this.router.navigate(['/edit-categorys'])
+    }
+    else if (this.buttonlabel === "Add Institute Type") {
+      sessionStorage.setItem("type", "Edit Institute Type");
+      sessionStorage.setItem("edit-cat1", JSON.stringify(s))
+      this.router.navigate(['/edit-categorys'])
+    }
+    else if (this.buttonlabel === "Add Category Type") {
+      sessionStorage.setItem("type", "Edit Category Type");
+      sessionStorage.setItem("edit-cat1", JSON.stringify(s))
     this.router.navigate(['/edit-categorys'])
+    }
+  }
+  tabChanged(type) {
+    console.log(type.index);
+    console.log(type);
+    if (type.index === 0) {
+      this.buttonlabel = "Add Sub Category";
+      // routerLink="/add-newdesk"
+      this.getallcategorys();
+
+    }
+    else if (type.index === 1) {
+      this.buttonlabel = "Add Institute Type";
+      this.getallcategorys();
+
+    }
+    else if (type.index === 2) {
+      this.buttonlabel = "Add Category Type";
+      this.getallcategorys();
+
+    }
+
+  }
+  addSubcatList() {
+    if (this.buttonlabel === "Add Sub Category") {
+      sessionStorage.setItem("type", "Add Sub Category");
+      this.router.navigate(['/add-newdesk'])
+    }
+    else if (this.buttonlabel === "Add Institute Type") {
+      sessionStorage.setItem("type", "Add Institute Type");
+      this.router.navigate(['/add-newdesk'])
+    }
+    else if (this.buttonlabel === "Add Category Type") {
+      sessionStorage.setItem("type", "Add Category Type");
+      this.router.navigate(['/add-newdesk'])
+    }
   }
 }

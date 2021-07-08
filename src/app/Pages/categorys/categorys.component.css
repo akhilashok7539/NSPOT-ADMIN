@@ -2,3 +2,13 @@
 .page-titles {
     margin-top: 20PX;
 }
+::ng-deep.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    
+    background-color: #0076db;
+    height: 5px;
+    border-radius: 35px;
+
+}
+table{
+    margin-top: 6px;
+}

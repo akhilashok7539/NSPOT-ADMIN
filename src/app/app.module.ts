@@ -55,6 +55,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {LoaderInterceptor} from './interceptors/loadingInterceptor';
 import { ViewDetialedComponent } from './Pages/institues/view-detialed/view-detialed.component';
+import { FilterComponent } from './components/filter/filter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -99,7 +100,8 @@ import { ViewDetialedComponent } from './Pages/institues/view-detialed/view-deti
     EditSubcat4Component,
     AddSubcat5Component,
     EditSubcat5Component,
-    ViewDetialedComponent
+    ViewDetialedComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,

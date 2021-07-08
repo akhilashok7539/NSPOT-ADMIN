@@ -8,6 +8,10 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class CourcesComponent implements OnInit {
   courses:any=[];
+  instituteFilterSelected: any = [];
+
+  instituteFilter:any = [];
+  onFilter=0;
   constructor(private apiserive:ApiService) { }
 
   ngOnInit(): void {
@@ -24,5 +28,18 @@ export class CourcesComponent implements OnInit {
         this.courses = data['data']
       }
     )
+  }
+  oninstituteFilter()
+  {
+
+  }
+  oninstituteFiltercancel()
+  {
+    this.onFilter = 0;
+  }
+  onFilterClick(index) {
+    this.onFilter = index;
+  
+
   }
 }
