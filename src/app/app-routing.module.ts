@@ -28,6 +28,13 @@ import { EditSubcat5Component } from './Pages/subcatgory5/edit-subcat5/edit-subc
 import { EditCategorysComponent } from './Pages/categorys/edit-categorys/edit-categorys.component';
 import { ViewDetialedComponent } from './Pages/institues/view-detialed/view-detialed.component';
 import { CompetitiveExamCoursesComponent } from './Pages/competitive-exam-courses/competitive-exam-courses.component';
+import { StatesComponent } from './Pages/states/states.component';
+import { AddStatesComponent } from './Pages/states/add-states/add-states.component';
+import { DistrictComponent } from './Pages/district/district.component';
+import { UniverisitiesComponent } from './Pages/univerisities/univerisities.component';
+import { AddUniversityComponent } from './Pages/univerisities/add-university/add-university.component';
+import { UpdateUniversityComponent } from './Pages/univerisities/update-university/update-university.component';
+import { AddDistrictComponent } from './Pages/district/add-district/add-district.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -65,6 +72,17 @@ const routes: Routes = [
       { path: 'add-subcat5', component: AddSubcat5Component },
       { path: 'edit-subcat5', component: EditSubcat5Component },
       { path: 'coursesforapproval', component: CompetitiveExamCoursesComponent },
+
+      { path: 'states', component: StatesComponent },
+      { path: 'add-states', component: AddStatesComponent },
+      { path: 'districts/:id', component: DistrictComponent },
+      { path: 'add-districts/:id', component: AddDistrictComponent },
+
+      { path: 'University', component: UniverisitiesComponent },
+      { path: 'add-University', component: AddUniversityComponent },
+      { path: 'edit-University', component: UpdateUniversityComponent },
+
+
 
     ],
   },

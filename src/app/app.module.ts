@@ -56,6 +56,13 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import {LoaderInterceptor} from './interceptors/loadingInterceptor';
 import { ViewDetialedComponent } from './Pages/institues/view-detialed/view-detialed.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { StatesComponent } from './Pages/states/states.component';
+import { DistrictComponent } from './Pages/district/district.component';
+import { AddStatesComponent } from './Pages/states/add-states/add-states.component';
+import { AddDistrictComponent } from './Pages/district/add-district/add-district.component';
+import { UniverisitiesComponent } from './Pages/univerisities/univerisities.component';
+import { AddUniversityComponent } from './Pages/univerisities/add-university/add-university.component';
+import { UpdateUniversityComponent } from './Pages/univerisities/update-university/update-university.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -101,7 +108,14 @@ import { FilterComponent } from './components/filter/filter.component';
     AddSubcat5Component,
     EditSubcat5Component,
     ViewDetialedComponent,
-    FilterComponent
+    FilterComponent,
+    StatesComponent,
+    DistrictComponent,
+    AddStatesComponent,
+    AddDistrictComponent,
+    UniverisitiesComponent,
+    AddUniversityComponent,
+    UpdateUniversityComponent
   ],
   imports: [
     BrowserModule,
