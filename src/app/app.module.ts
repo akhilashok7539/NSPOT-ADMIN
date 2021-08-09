@@ -63,6 +63,12 @@ import { AddDistrictComponent } from './Pages/district/add-district/add-district
 import { UniverisitiesComponent } from './Pages/univerisities/univerisities.component';
 import { AddUniversityComponent } from './Pages/univerisities/add-university/add-university.component';
 import { UpdateUniversityComponent } from './Pages/univerisities/update-university/update-university.component';
+import { BoardComponent } from './Pages/settings/board/board.component';
+import { OtherboardsComponent } from './Pages/settings/otherboards/otherboards.component';
+import { AddBoardComponent } from './Pages/settings/board/add-board/add-board.component';
+import { EditBoardComponent } from './Pages/settings/board/edit-board/edit-board.component';
+import { AddOtherboardComponent } from './Pages/settings/otherboards/add-otherboard/add-otherboard.component';
+import { UpdateOtherboardComponent } from './Pages/settings/otherboards/update-otherboard/update-otherboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -115,7 +121,13 @@ import { UpdateUniversityComponent } from './Pages/univerisities/update-universi
     AddDistrictComponent,
     UniverisitiesComponent,
     AddUniversityComponent,
-    UpdateUniversityComponent
+    UpdateUniversityComponent,
+    BoardComponent,
+    OtherboardsComponent,
+    AddBoardComponent,
+    EditBoardComponent,
+    AddOtherboardComponent,
+    UpdateOtherboardComponent
   ],
   imports: [
     BrowserModule,

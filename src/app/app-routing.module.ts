@@ -35,6 +35,12 @@ import { UniverisitiesComponent } from './Pages/univerisities/univerisities.comp
 import { AddUniversityComponent } from './Pages/univerisities/add-university/add-university.component';
 import { UpdateUniversityComponent } from './Pages/univerisities/update-university/update-university.component';
 import { AddDistrictComponent } from './Pages/district/add-district/add-district.component';
+import { BoardComponent } from './Pages/settings/board/board.component';
+import { OtherboardsComponent } from './Pages/settings/otherboards/otherboards.component';
+import { AddBoardComponent } from './Pages/settings/board/add-board/add-board.component';
+import { EditBoardComponent } from './Pages/settings/board/edit-board/edit-board.component';
+import { AddOtherboardComponent } from './Pages/settings/otherboards/add-otherboard/add-otherboard.component';
+import { UpdateOtherboardComponent } from './Pages/settings/otherboards/update-otherboard/update-otherboard.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -82,7 +88,13 @@ const routes: Routes = [
       { path: 'add-University', component: AddUniversityComponent },
       { path: 'edit-University', component: UpdateUniversityComponent },
 
+      { path: 'board', component: BoardComponent },
+      { path: 'add-board', component: AddBoardComponent },
+      { path: 'update-board', component: EditBoardComponent },
 
+      { path: 'other-board', component: OtherboardsComponent },
+      { path: 'add-otherboard', component: AddOtherboardComponent },
+      { path: 'update-otherboard', component: UpdateOtherboardComponent },
 
     ],
   },
