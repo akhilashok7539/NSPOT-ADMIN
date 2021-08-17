@@ -1,42 +1,124 @@
+<!-- <a routerLink="/dashboard">Home </a> >> {{catname}} -->
 <div class="row page-titles">
+  
     <div class="col-md-5 align-self-center">
-        <h3 class="text-themecolor">Main Category Management</h3>
+      
+        <!-- <h3 class="text-themecolor">{{catname}}</h3> -->
+        <button routerLink="/dashboard" style="background: none;outline: none;
+        border: none;"><img style="    width: 33px;
+            margin-bottom: -20px;
+            margin-left: 36px;" src="https://img.icons8.com/flat-round/64/000000/arrow-left.png"/></button>
+              <h3 class="text-themecolor" style="    position: absolute;
+              margin-left: 91px;
+              margin-top: -15px;">{{catname}}</h3>
+    </div>
+    <div class="col-sm-7">
+        <button class="btn btn-primary" style="float: right;" (click)="addSubcatList()">{{buttonlabel}}</button>
     </div>
 </div>
 
 <div class="container">
     <div class="row text-center mt-5">
-        <div class="alert alert-warning" *ngIf="bankItems?.length==0">No Courses available.</div>
+        <!-- <div class="alert alert-warning" *ngIf="bankItems?.length==0">No Courses available.</div> -->
 
         <!-- <pre>{{bankItems|json}}</pre> -->
+        <div class="col-sm-12">
 
-        <table id="customers">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Category Name</th>
-                    <th>Account No</th>
-                    <th>IFSC</th>
-                    <th>Razorpay ID</th>
-                    <th>Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of bankItems; let i=index">
-                    <td>{{i+1}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.accountNumber}}</td>
-                    <td>{{item.ifsc}}</td>
-                    <td>{{item.razorpay_linkedAccount_id}}</td>
-                    <td><i class="mdi mdi-table-edit" (click)="edit(item)"></i></td>
+       
+        <mat-tab-group (selectedTabChange)="tabChanged($event)" >
+            <mat-tab label="Sub Category"  > 
 
-                </tr>
-            </tbody>
-            <tbody>
+                <table class="table">
+                    <thead>
+                        <tr >
+                            <th>No</th>
+                            <th>Category Name</th>
+        
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of categoryitems; let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.title}}</td>
+        
+                            <td> <button class="btn btn-success" (click)="edit(item)">Edit</button> &nbsp;
+                                <button class="btn btn-dark" (click)="delete(item)">Delete</button> &nbsp;
+        
+                                <button class="btn btn-warning" (click)="addsubcat(item)">Add Sub category</button>
+        
+                            </td>
+        
+                        </tr>
+                    </tbody>
+                    <tbody>
+        
+                    </tbody>
+                </table>
 
-            </tbody>
-        </table>
-
+            </mat-tab>
+            <mat-tab label="Institute Type" >
+                <table class="table">
+                    <thead>
+                        <tr >
+                            <th>No</th>
+                            <th>Category Name</th>
+        
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of categoryitems; let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.title}}</td>
+        
+                            <td> <button class="btn btn-success" (click)="edit(item)">Edit</button> &nbsp;
+                                <button class="btn btn-dark" (click)="delete(item)">Delete</button> &nbsp;
+        
+                              
+        
+                            </td>
+        
+                        </tr>
+                    </tbody>
+                    <tbody>
+        
+                    </tbody>
+                </table>
+            </mat-tab>
+            <mat-tab label="Institute Category" >
+                <table class="table">
+                    <thead>
+                        <tr >
+                            <th>No</th>
+                            <th>Category Name</th>
+        
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of categoryitems; let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.title}}</td>
+        
+                            <td> <button class="btn btn-success" (click)="edit(item)">Edit</button> &nbsp;
+                                <button class="btn btn-dark" (click)="delete(item)">Delete</button> &nbsp;
+        
+                             
+        
+                            </td>
+        
+                        </tr>
+                    </tbody>
+                    <tbody>
+        
+                    </tbody>
+                </table>
+            </mat-tab>
+          </mat-tab-group>
+          
+        
+        </div>
 
 
     </div>

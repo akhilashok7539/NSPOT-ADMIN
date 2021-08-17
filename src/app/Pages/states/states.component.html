@@ -1,0 +1,61 @@
+<!-- <a routerLink="/dashboard">Home </a> >> {{catname}} -->
+<div class="row page-titles">
+  
+    <div class="col-md-5 align-self-center">
+      
+        <!-- <h3 class="text-themecolor">State List</h3> -->
+        
+    </div>
+    <div class="col-sm-7">
+        <button class="btn btn-primary" style="float: right;" (click)="adddstate()">Add States</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row text-center mt-5">
+        <!-- <div class="alert alert-warning" *ngIf="bankItems?.length==0">No Courses available.</div> -->
+
+        <!-- <pre>{{bankItems|json}}</pre> -->
+        <div class="col-sm-12">
+
+
+
+                <table class="table">
+                    <thead>
+                        <tr >
+                            <th>No</th>
+                            <th>State Name</th>
+        
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of stateList; let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.state}}</td>
+        
+                            <td> <button class="btn btn-success" (click)="edit(item)">Edit</button> &nbsp;
+                                
+        
+                                <button class="btn btn-warning" routerLink="/districts/{{item.id}}">View District</button>
+        
+                            </td>
+        
+                        </tr>
+                    </tbody>
+                    <tbody>
+        
+                    </tbody>
+                </table>
+
+           
+               
+          
+        
+        </div>
+
+
+    </div>
+
+
+</div>

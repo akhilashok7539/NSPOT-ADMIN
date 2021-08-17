@@ -68,4 +68,25 @@ export const endPoints = {
     Get_courses: 'institute/course/', // ?where[id]=12&&where[status]="pre-application-applied"
 
     Update_course: 'institute/course/update/', // :courseId
+
+
+    //GET CATEGROYS
+    CATEGORYS_DESKTYPES: 'course-categories/',
+    //update CATEGROYS
+    UPDATE_CATEGORYS_DESKTYPES: 'course-categories/update/',
+    //add CATEGROYS
+    ADD_CATEGORYS_DESKTYPES: 'course-categories/create',
+    //DELETE CATEGROYS
+    DELETE_CATEGORYS_DESKTYPES: 'course-categories/delete',
+
+    //GET SUB CATEGROYS
+    SUB_CATEGORYS_DESKTYPES: 'course-categories/subcategory/',
+    //update SUB CATEGROYS
+    SUB_UPDATE_CATEGORYS_DESKTYPES: 'course-categories/subcategory/update',
+    //add SUB CATEGROYS
+    SUB_ADD_CATEGORYS_DESKTYPES: 'course-categories/subcategory/create',
+    //DELETE SUB CATEGROYS
+    SUB_DELETE_CATEGORYS_DESKTYPES: 'course-categories/subcategory/delete',
+    //GET SUB CAT BY ID
+    SUB_CATEGORYS_BY_ID :"course-categories/subcategory/getById/"
 };

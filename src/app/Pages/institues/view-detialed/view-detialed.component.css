@@ -1,0 +1,32 @@
+.card
+{
+    background: #242a33;
+    color: white;
+    padding: 23px;
+}
+.uppercase{
+    color: white;
+
+}
+hr{
+    background: red;
+    width: 25%;
+}
+h3{
+    color: white;
+}
+h4{
+    color: white;
+    
+}
+.search-teachers{
+    background: #9ca09c47;
+    outline: none;
+    color: white;
+    border: none;
+    padding: 7px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+
+}

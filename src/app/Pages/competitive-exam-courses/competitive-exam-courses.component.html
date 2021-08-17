@@ -1,0 +1,50 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 class="text-themecolor">Course Approval</h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row text-center mt-5">
+        <div class="alert alert-warning" *ngIf="courses?.length==0">No Courses available.</div>
+
+        <!-- <pre>{{bankItems|json}}</pre> -->
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Course Code</th>
+                    <th>Institue</th>
+                    <th>University Name</th>
+                    <th>Principal Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of courses; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.courseCode}}</td>
+                    <td>{{item.Institute.name}}</td>
+                    <td>{{item.universityName}}</td>
+                    <td>{{item.Institute.principalName}}</td>
+                    <!-- <td><i class="mdi mdi-table-edit" (click)="edit(item)"></i></td> -->
+                    <td>
+                        <button class="btn btn-success" (click)="approve(item)">Approve</button>
+                        &nbsp;
+                        <button class="btn btn-danger" (click)="reject(item)">Reject</button>
+
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+
+</div>

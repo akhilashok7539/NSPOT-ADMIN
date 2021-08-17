@@ -6,29 +6,35 @@
 
 <div class="container">
     <div class="row text-center mt-5">
-        <div class="alert alert-warning" *ngIf="bankItems?.length==0">No Courses available.</div>
+        <div class="alert alert-warning" *ngIf="courses?.length==0">No Courses available.</div>
 
         <!-- <pre>{{bankItems|json}}</pre> -->
 
-        <table id="customers">
+        <table class="table">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Course Name</th>
-                    <th>Account No</th>
-                    <th>IFSC</th>
-                    <th>Razorpay ID</th>
-                    <th>Edit</th>
+                    <th>Course Code</th>
+                    <th>Institue
+                        <!-- <i class="fas fa-filter" [ngClass]="{'sort_filter_active':instituteFilterSelected.length !==0}"  (click)='onFilterClick(2)'></i>
+                        <app-filter [filterArrayDetail]='instituteFilter' 
+                        (onSubmitFIlter)='oninstituteFilter($event)' (onCancel)="oninstituteFiltercancel($event)"
+                        *ngIf='onFilter === 2'></app-filter> -->
+
+                    </th>
+                    <th>University Name</th>
+                    <th>Principal Name</th>
+                    <!-- <th>Edit</th> -->
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of bankItems; let i=index">
+                <tr *ngFor="let item of courses; let i=index">
                     <td>{{i+1}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.accountNumber}}</td>
-                    <td>{{item.ifsc}}</td>
-                    <td>{{item.razorpay_linkedAccount_id}}</td>
-                    <td><i class="mdi mdi-table-edit" (click)="edit(item)"></i></td>
+                    <td>{{item.courseCode}}</td>
+                    <td>{{item.Institute.name}}</td>
+                    <td>{{item.universityName}}</td>
+                    <td>{{item.Institute.principalName}}</td>
+                    <!-- <td><i class="mdi mdi-table-edit" (click)="edit(item)"></i></td> -->
 
                 </tr>
             </tbody>
