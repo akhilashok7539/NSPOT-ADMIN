@@ -1,0 +1,151 @@
+
+<div class="container">
+    <div class="card">
+        <h2 class="uppercase">Course Details</h2>
+        <hr>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3> Course Name : {{courseName}}</h3>
+                <!-- Institute Type : <span class="lessons"><i
+                    class="zmdi zmdi-assignment"></i>{{instituteInfo?.InstituteType.title}}</span>
+            <br> -->
+                <p class="class-details uppercase">
+                   
+                    Program Code : <span class="duration"><i class="zmdi zmdi-time"></i>{{courseDetails?.Institute_Course?.programCode}}</span>
+                    <br>
+
+                   
+
+
+
+
+
+                </p>
+                <p>Admission Type  : <span class="duration"><i class="zmdi zmdi-time"></i>{{courseDetails?.Institute_Course?.admissionType}}</span></p>
+            
+                <p>Institute Type  : <span class="duration"><i class="zmdi zmdi-time"></i>{{courseDetails?.Institute_Course?.instituteType}}</span></p>
+            
+            </div>
+            <div class="col-sm-6">
+     
+                <P><span class="views"><i class="zmdi zmdi-eye"></i>Available Seats : 
+                    {{courseDetails?.Institute_Course?.availableSeats}}</span></P>
+               
+               
+                <P> <span class="views" *ngIf="courseDetails?.Institute_Course?.aptituteTestRequired === true"><i class="zmdi zmdi-eye"></i>
+                    Aptitude Test is Required:
+                   Yes</span></P>
+                   <P> <span class="views" *ngIf="courseDetails?.Institute_Course?.aptituteTestRequired === false"><i class="zmdi zmdi-eye"></i>
+                    Aptitude Test is Required:
+                   Yes</span></P>
+                <P><span class="views"><i class="zmdi zmdi-eye"></i>Course Duration
+                    {{courseDetails?.Institute_Course?.courseDuration}}</span></P>
+                <p>Institute Category  : <span class="duration"><i class="zmdi zmdi-time"></i>{{courseDetails?.Institute_Course?.instituteCatagory}}</span></p>
+
+            </div>
+        </div>
+    </div>
+    <div class="card">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>CONTACT ADDRESS</h4>
+                <hr style="    float: left;">
+            </div>
+            <div class="col-sm-6">
+                <h4>MORE INFO</h4>
+                <hr style="    float: left;">
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <div>
+                    <p>Address :
+                        {{courseDetails?.Institute_Course?.campusAddressLine1}},
+                        {{courseDetails?.Institute_Course?.campusAddressLine2}},
+                        {{courseDetails?.Institute_Course?.campusAddressLine3}}
+
+                    </p>
+                    <p class="order-or"><span><i class="zmdi zmdi-phone"></i></span></p>
+
+                    <p>Block : {{courseDetails?.Institute_Course?.block}}</p>
+                    <p>Country : {{courseDetails?.Institute_Course?.country}}</p>
+                  
+                    
+
+
+                    
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div>
+                    <p *ngIf="courseDetails?.Institute_Course?.maleAllowed === true">Male Allowed : Yes</p>
+                    <p *ngIf="courseDetails?.Institute_Course?.maleAllowed === false">Male Allowed : No</p>
+
+                    <p *ngIf="courseDetails?.Institute_Course?.femaleAllowed === true">Female Allowed : Yes</p>
+                    <p *ngIf="courseDetails?.Institute_Course?.femaleAllowed === false">Female Allowed : No</p>
+
+                    
+                    <p *ngIf="courseDetails?.Institute_Course?.otherGenderAllowed === true">Other Gender Allowed : Yes</p>
+                    <p *ngIf="courseDetails?.Institute_Course?.otherGenderAllowed === false">Other Gender Allowed : No</p>
+                    <p>Admission Start Date : {{courseDetails?.Institute_Course?.admissionStartDate}}</p>
+                    <p>Admission Close Date : {{courseDetails?.Institute_Course?.admissionCloseDate}}</p>
+                    <p>Class Start Date : {{courseDetails?.Institute_Course?.classStartDate}}</p>
+                    <p>Exam Conducted : {{courseDetails?.Institute_Course?.examConducted}}</p>
+                </div>
+
+              
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>Fee Info for Indian Students</h4>
+                <hr style="    float: left;">
+            </div>
+            <div class="col-sm-6">
+                <h4>Fee Info for International Students</h4>
+
+                <hr style="    float: left;">
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-sm-6">
+
+                <p>Spot Admission Payment : {{courseDetails?.spotfee}}</p>
+                <p *ngIf="courseDetails?.hasScolarship === true">Is scholarship is available : Yes </p>
+                <p *ngIf="courseDetails?.hasScolarship === false">Is scholarship is available : No </p>
+                <p>Fee Excludes : {{courseDetails?.otherexcludes}}</p>
+                <p>Fee Includes : {{courseDetails?.otherIncludes}}</p>
+                <p>Amount Credited to Insitute :{{courseDetails?.amountcreditedInstitute}}</p>
+                <p>Refund Policy : {{courseDetails?.refundPolicy}}</p>
+
+            </div>
+
+            <div class="col-md-6">
+             
+                <p>Spot Admission Payment : {{courseDetails?.nriSpotfee}}</p>
+                <p *ngIf="courseDetails?.hasScolarshipNri === 'true'">Is scholarship is available : Yes </p>
+                <p *ngIf="courseDetails?.hasScolarshipNri === 'false'">Is scholarship is available : No </p>
+                <p>Fee Excludes : {{courseDetails?.feeexcludesNri}}</p>
+                <p>Fee Includes : {{courseDetails?.nriOtherIncludes}}</p>
+                <p>Amount Credited to Insitute :{{courseDetails?.nriAmountCreditedinstitute}}</p>
+                <p>Refund Policy : {{courseDetails?.nrirefundPolicy}}</p>
+            </div>
+        </div>
+
+
+    </div>
+    
+    
+</div>

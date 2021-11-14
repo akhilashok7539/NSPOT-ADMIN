@@ -8,6 +8,10 @@
     color: white;
 
 }
+@media (min-width: 1200px)
+{.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 91%;
+}}
 hr{
     background: red;
     width: 25%;
@@ -29,7 +33,4 @@ h4{
     margin-right: 5px;
     margin-top: 10px;
 
-}@media (min-width: 1200px)
-{.container, .container-lg, .container-md, .container-sm, .container-xl {
-    max-width: 91%;
-}}
+}

@@ -69,6 +69,9 @@ import { AddBoardComponent } from './Pages/settings/board/add-board/add-board.co
 import { EditBoardComponent } from './Pages/settings/board/edit-board/edit-board.component';
 import { AddOtherboardComponent } from './Pages/settings/otherboards/add-otherboard/add-otherboard.component';
 import { UpdateOtherboardComponent } from './Pages/settings/otherboards/update-otherboard/update-otherboard.component';
+import { ViewCoursedetailsComponent } from './Pages/view-coursedetails/view-coursedetails.component';
+import { ViewPaymentHistoryComponent } from './Pages/view-payment-history/view-payment-history.component';
+import { ViewConfirmationLetterComponent } from './Pages/view-payment-history/view-confirmation-letter/view-confirmation-letter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -127,7 +130,10 @@ import { UpdateOtherboardComponent } from './Pages/settings/otherboards/update-o
     AddBoardComponent,
     EditBoardComponent,
     AddOtherboardComponent,
-    UpdateOtherboardComponent
+    UpdateOtherboardComponent,
+    ViewCoursedetailsComponent,
+    ViewPaymentHistoryComponent,
+    ViewConfirmationLetterComponent
   ],
   imports: [
     BrowserModule,

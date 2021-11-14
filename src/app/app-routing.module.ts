@@ -41,6 +41,9 @@ import { AddBoardComponent } from './Pages/settings/board/add-board/add-board.co
 import { EditBoardComponent } from './Pages/settings/board/edit-board/edit-board.component';
 import { AddOtherboardComponent } from './Pages/settings/otherboards/add-otherboard/add-otherboard.component';
 import { UpdateOtherboardComponent } from './Pages/settings/otherboards/update-otherboard/update-otherboard.component';
+import { ViewCoursedetailsComponent } from './Pages/view-coursedetails/view-coursedetails.component';
+import { ViewPaymentHistoryComponent } from './Pages/view-payment-history/view-payment-history.component';
+import { ViewConfirmationLetterComponent } from './Pages/view-payment-history/view-confirmation-letter/view-confirmation-letter.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -95,6 +98,12 @@ const routes: Routes = [
       { path: 'other-board', component: OtherboardsComponent },
       { path: 'add-otherboard', component: AddOtherboardComponent },
       { path: 'update-otherboard', component: UpdateOtherboardComponent },
+
+      { path: 'view-coursedetails/:id/:name', component: ViewCoursedetailsComponent },
+
+      { path: 'view-paymenthistory', component: ViewPaymentHistoryComponent },
+      { path: 'view-confirmationletter/:applicationId', component: ViewConfirmationLetterComponent },
+
 
     ],
   },
