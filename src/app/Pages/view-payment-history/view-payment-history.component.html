@@ -1,12 +1,12 @@
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-        <h3 class="text-themecolor">Course Management</h3>
+        <h3 class="text-themecolor">Payment History</h3>
     </div>
 </div>
 
 <div class="container">
     <div class="row text-center mt-5">
-        <div class="alert alert-warning" *ngIf="courseslist?.length==0">No Courses available.</div>
+        <div class="alert alert-warning" *ngIf="courseslist?.length==0">No Payment History available.</div>
 
         <!-- <pre>{{bankItems|json}}</pre> -->
 
@@ -25,31 +25,36 @@
                     <th>Transaction ID</th>
                     <th>Payment Date</th>
                     <th>Action</th>
+                    <th></th>
+                    <th></th>
+
+                    <th></th>
+                    <th></th>
+
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let item of courslistupdated; let i=index">
                     <td>{{i+1}}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{getcourseName(item)}}</td>
+                    <td>{{getinstituteName(item)}}</td>
                     <td>{{item.item?.localTransactionId}}</td>
                     <td>{{item.item?.createdAt}}</td>
                     <td>Payment Done</td>
                     <td>
-                        <button class="btn btn-info" (click)="viewcourse(item.course.id)">View Course</button>
-                        &nbsp;
-                        <button class="btn btn-success" *ngIf="item.item?.status === 'Pending'" (click)="approved(item.item.id)">Approve</button> &nbsp;
-                        <button class="btn btn-danger" *ngIf="item.item?.status === 'Pending'"  (click)="rejected(item.item.id)">Reject</button> &nbsp;
-                        &nbsp; <button class="btn btn-info" routerLink="/view-confirmationletter/{{item.item.applicationId}}">View Confirmation Letter</button>
-                        &nbsp; <button class="btn btn-info" >Upload Recipt</button>
+                        <button class="btn btn-info" (click)="viewcourse(item)">View Course</button>
+                       
+                        
 
                     </td>
-                    <!-- <td>{{item.item?.Institute?.name}}</td>
-                    <td>{{item.item?.University?.name}}</td>
-                    <td>{{item.universityName}}</td>
-                    <td>{{item.Institute.principalName}}</td> -->
-                    <!-- <td><i class="mdi mdi-table-edit" (click)="edit(item)"></i></td> -->
+                    <td>
+                        
+      
+                    <button class="btn btn-info" routerLink="/view-confirmationletter/{{item.item.applicationId}}">View Confirmation Letter</button>
+                     </td>
 
+                        <td><button class="btn btn-info" (click)="uploadRecipt(item)">Upload Recipt</button></td>
+                        <td><button class="btn btn-info" (click)="viewRecipt(item)">Download Uploaded Recipt Institute</button></td>
                 </tr>
             </tbody>
             <tbody>

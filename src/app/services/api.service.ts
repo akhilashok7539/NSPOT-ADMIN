@@ -93,6 +93,20 @@ export class ApiService {
       }),
     )
   }
+  public doPutRequest_upload(url: any, data: any) {
+    // this.getAccessToken()
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Access-Control-Allow-Origin': '*',
+        // Authorization: 'Bearer ' + this.accessToken,
+      }),
+    }
+    return this.http.put<any>(this.SERVER_URL + url, data, httpOptions).pipe(
+      map((response) => {
+        return response
+      }),
+    )
+  }
   getallAcademicLevelCourseById(id)
   {
     return this.http.get(this.SERVER_URL+endPoints.Get_academicLevel_Courses+id);

@@ -71,7 +71,9 @@ import { AddOtherboardComponent } from './Pages/settings/otherboards/add-otherbo
 import { UpdateOtherboardComponent } from './Pages/settings/otherboards/update-otherboard/update-otherboard.component';
 import { ViewCoursedetailsComponent } from './Pages/view-coursedetails/view-coursedetails.component';
 import { ViewPaymentHistoryComponent } from './Pages/view-payment-history/view-payment-history.component';
+import {FilterPipe} from './pipes/FilterPipe';
 import { ViewConfirmationLetterComponent } from './Pages/view-payment-history/view-confirmation-letter/view-confirmation-letter.component';
+import { UploadReceiptComponent } from './Pages/view-payment-history/upload-receipt/upload-receipt.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -129,11 +131,13 @@ import { ViewConfirmationLetterComponent } from './Pages/view-payment-history/vi
     OtherboardsComponent,
     AddBoardComponent,
     EditBoardComponent,
+    FilterPipe,
     AddOtherboardComponent,
     UpdateOtherboardComponent,
     ViewCoursedetailsComponent,
     ViewPaymentHistoryComponent,
-    ViewConfirmationLetterComponent
+    ViewConfirmationLetterComponent,
+    UploadReceiptComponent
   ],
   imports: [
     BrowserModule,

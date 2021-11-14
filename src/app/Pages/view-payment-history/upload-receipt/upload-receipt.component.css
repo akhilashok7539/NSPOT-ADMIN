@@ -1,0 +1,16 @@
+.col-sm-12{
+    display: flex;
+    justify-content: center;
+}
+.card{
+    padding: 64px;
+    margin-top: 134px;
+    width: 48%;
+}
+input{
+    border: 1px solid #80808045;
+    padding: 20px;
+}
+.btn{
+    margin-top: 38px;
+}

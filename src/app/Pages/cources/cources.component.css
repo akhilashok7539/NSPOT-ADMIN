@@ -7,3 +7,8 @@
 {.container, .container-lg, .container-md, .container-sm, .container-xl {
     max-width: fit-content;
 }}
+
+.col-sm-2
+{
+    margin-bottom: 39px;
+}
