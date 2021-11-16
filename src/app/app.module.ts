@@ -74,6 +74,7 @@ import { ViewPaymentHistoryComponent } from './Pages/view-payment-history/view-p
 import {FilterPipe} from './pipes/FilterPipe';
 import { ViewConfirmationLetterComponent } from './Pages/view-payment-history/view-confirmation-letter/view-confirmation-letter.component';
 import { UploadReceiptComponent } from './Pages/view-payment-history/upload-receipt/upload-receipt.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -145,6 +146,7 @@ import { UploadReceiptComponent } from './Pages/view-payment-history/upload-rece
     FormsModule,
     MaterialModule,
     NgxSpinnerModule,
+    FlexLayoutModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     MatTooltipModule,

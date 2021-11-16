@@ -6,7 +6,8 @@ import { ApiService } from 'src/app/services/api.service';
 @Component({
   selector: 'app-view-payment-history',
   templateUrl: './view-payment-history.component.html',
-  styleUrls: ['./view-payment-history.component.css']
+  styleUrls: ['./view-payment-history.component.css'],
+  
 })
 export class ViewPaymentHistoryComponent implements OnInit {
   courseslist: any = [];

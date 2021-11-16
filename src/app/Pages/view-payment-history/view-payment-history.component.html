@@ -3,25 +3,17 @@
         <h3 class="text-themecolor">Payment History</h3>
     </div>
 </div>
-
+<!-- 
 <div class="container">
     <div class="row text-center mt-5">
         <div class="alert alert-warning" *ngIf="courseslist?.length==0">No Payment History available.</div>
-
-        <!-- <pre>{{bankItems|json}}</pre> -->
 
         <table class="table">
             <thead>
                 <tr>
                     <th>No</th>
                     <th>Course Name</th>
-                    <th>Institue Name
-                        <!-- <i class="fas fa-filter" [ngClass]="{'sort_filter_active':instituteFilterSelected.length !==0}"  (click)='onFilterClick(2)'></i>
-                        <app-filter [filterArrayDetail]='instituteFilter' 
-                        (onSubmitFIlter)='oninstituteFilter($event)' (onCancel)="oninstituteFiltercancel($event)"
-                        *ngIf='onFilter === 2'></app-filter> -->
-
-                    </th>
+                    <th>Institue Name</th>
                     <th>Transaction ID</th>
                     <th>Payment Date</th>
                     <th>Action</th>
@@ -67,4 +59,52 @@
     </div>
 
 
+</div>
+ -->
+
+
+
+
+
+
+
+
+<div fxLayout="column" class="headerdiv">
+	<section fxLayoutAlign="space-between end" fxFlex="100" class="heading-row">
+		<p fxFlex="10">Course Name</p>
+		<p fxFlex="20">Institue Name</p>
+		<p fxFlex="">Transaction ID</p>
+		<p fxFlex="16">Payment Date</p>
+		<p fxFlex="16">Status</p>
+	</section>
+
+	<mat-accordion [displayMode]="'flat'">
+
+		<mat-expansion-panel *ngFor="let item of courslistupdated;let i=index">
+			<mat-expansion-panel-header>
+				<section fxLayoutAlign="space-between end" fxFlex="100">
+					<p fxFlex="10">{{getcourseName(item)}}</p>
+					<p fxFlex="20">{{getinstituteName(item)}}</p>
+					<p fxFlex="">{{item.item?.localTransactionId}}</p>
+					<p fxFlex="16">{{item.item?.createdAt | date:'fullDate'}}</p>
+					<p fxFlex="16" style="margin-right: 17px;">
+                       
+                        <span class="spantag"> Payment Done</span>
+                    </p>
+				</section>
+			</mat-expansion-panel-header>
+            <div class="expansion">
+	<p ><button class="btn btn-info" routerLink="/view-confirmationletter/{{item.item.applicationId}}">View Confirmation Letter</button></p>
+    <p ><button class="btn btn-info" (click)="viewcourse(item)">View Course</button></p>
+    <p><button class="btn btn-info" (click)="uploadRecipt(item)">Upload Recipt</button></p>
+    <p><button class="btn btn-info" (click)="viewRecipt(item)">Download Uploaded Recipt Institute</button></p>
+    <p><button class="btn btn-danger" (click)="viewRecipt(item)">Make Payment to Institute</button></p>
+
+            </div>
+		
+		</mat-expansion-panel>
+
+	</mat-accordion>
+
+  
 </div>
