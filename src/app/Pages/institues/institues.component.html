@@ -37,9 +37,9 @@
 
                         <button class="btn btn-dark" routerLink="/institute-detailed/{{item.userId}}">View Details</button> &nbsp;
 
-                        <button class="btn btn-danger">Deactivated</button> &nbsp;
+                        <button class="btn btn-danger" (click)="Deactivated(item)" *ngIf="item.isActive === true">Deactivated</button> &nbsp;
 
-                        <!-- <button class="btn btn-success">Activated</button> -->
+                        <button class="btn btn-success"  (click)="Activated(item)" *ngIf="item.isActive === false">Activated</button>
                     </td>
 
                 </tr>

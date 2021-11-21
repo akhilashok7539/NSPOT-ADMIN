@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class InstituesComponent implements OnInit {
 
   institutes:any = [];
-  constructor(private apiservice:ApiService) { }
+  constructor(private apiservice:ApiService,private toaster:ToastrService) { }
 
   ngOnInit(): void {
     this.getallinstitues();
@@ -25,6 +26,45 @@ export class InstituesComponent implements OnInit {
       error =>{
 
 
+      }
+    )
+  }
+  Deactivated(s)
+  {
+    console.log(s.id);
+  let req = {
+    "isActive":false
+  }
+  this.apiservice.doPutRequest("user/update/activeStatus/"+s.id,req).subscribe(
+
+    data =>{
+      this.toaster.success("Status Changed")
+      this.ngOnInit();
+    },
+    error =>{
+      this.toaster.error("Unable to change status")
+
+    }
+  )
+    
+  }
+  Activated(s)
+  {
+    console.log(s);
+    let req = {
+      "isActive":true
+    }
+    this.apiservice.doPutRequest("user/update/activeStatus/"+s.id,req).subscribe(
+
+      data =>{
+        this.toaster.success("Status Changed")
+        this.ngOnInit();
+  
+      },
+      error =>{
+        this.toaster.error("Unable to change status")
+
+        
       }
     )
   }

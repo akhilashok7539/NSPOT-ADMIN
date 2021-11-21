@@ -6,13 +6,13 @@ export const environment = {
   production: false,
   // apiUrl: 'http://localhost:3000/api/',
   apiUrl: 'https://nspot-server.herokuapp.com/api/',
-  
   baseApiUrl: 'https://nspot-server.herokuapp.com/',
-  // apiUrl: 'http://35.239.209.28:3000/api/',
-  // baseApiUrl: 'http://35.239.209.28:3000/',
-  adminPortalUrl: 'http://nspot.admin.surge.sh',
-  institutePortalUrl: 'http://nspot.admin.surge.sh',
-  studentPortalUrl: 'http://nspot.admin.surge.sh',
+
+  adminPortalUrl: '',
+  institutePortalUrl: '',
+  studentPortalUrl: '',
+  RAZORPAY_KEY_ID: "rzp_test_J7wOs0sSPhfvXU",
+  // RAZORPAY_KEY_SECRET:"7ZWhKdZRPd4sRAe5arpVwNrv"
 };
 
 /*

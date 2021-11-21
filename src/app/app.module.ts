@@ -75,6 +75,7 @@ import {FilterPipe} from './pipes/FilterPipe';
 import { ViewConfirmationLetterComponent } from './Pages/view-payment-history/view-confirmation-letter/view-confirmation-letter.component';
 import { UploadReceiptComponent } from './Pages/view-payment-history/upload-receipt/upload-receipt.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MakePaymentInstituteComponent } from './Pages/view-payment-history/make-payment-institute/make-payment-institute.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -138,7 +139,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ViewCoursedetailsComponent,
     ViewPaymentHistoryComponent,
     ViewConfirmationLetterComponent,
-    UploadReceiptComponent
+    UploadReceiptComponent,
+    MakePaymentInstituteComponent
   ],
   imports: [
     BrowserModule,

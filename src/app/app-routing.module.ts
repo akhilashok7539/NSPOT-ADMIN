@@ -45,6 +45,7 @@ import { ViewCoursedetailsComponent } from './Pages/view-coursedetails/view-cour
 import { ViewPaymentHistoryComponent } from './Pages/view-payment-history/view-payment-history.component';
 import { ViewConfirmationLetterComponent } from './Pages/view-payment-history/view-confirmation-letter/view-confirmation-letter.component';
 import { UploadReceiptComponent } from './Pages/view-payment-history/upload-receipt/upload-receipt.component';
+import { MakePaymentInstituteComponent } from './Pages/view-payment-history/make-payment-institute/make-payment-institute.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -105,6 +106,7 @@ const routes: Routes = [
       { path: 'view-paymenthistory', component: ViewPaymentHistoryComponent },
       { path: 'view-confirmationletter/:applicationId', component: ViewConfirmationLetterComponent },
       { path: 'upload-recipt/:id', component: UploadReceiptComponent },
+      { path: 'checkout-payment', component: MakePaymentInstituteComponent },
 
 
     ],
