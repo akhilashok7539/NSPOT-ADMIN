@@ -35,7 +35,7 @@ export class InstituesComponent implements OnInit {
   let req = {
     "isActive":false
   }
-  this.apiservice.doPutRequest("user/update/activeStatus/"+s.id,req).subscribe(
+  this.apiservice.doPutRequest("user/update/activeStatus/"+s.userId,req).subscribe(
 
     data =>{
       this.toaster.success("Status Changed")
@@ -44,9 +44,18 @@ export class InstituesComponent implements OnInit {
     error =>{
       this.toaster.error("Unable to change status")
 
+    })
+  this.apiservice.doPutRequest("/institute/update/"+s.id,req).subscribe(
+
+    data =>{
+      // this.toaster.success("Status Changed")
+      this.ngOnInit();
+    },
+    error =>{
+      // this.toaster.error("Unable to change status")
+
     }
   )
-    
   }
   Activated(s)
   {
@@ -54,7 +63,7 @@ export class InstituesComponent implements OnInit {
     let req = {
       "isActive":true
     }
-    this.apiservice.doPutRequest("user/update/activeStatus/"+s.id,req).subscribe(
+    this.apiservice.doPutRequest("user/update/activeStatus/"+s.userId,req).subscribe(
 
       data =>{
         this.toaster.success("Status Changed")
@@ -65,6 +74,17 @@ export class InstituesComponent implements OnInit {
         this.toaster.error("Unable to change status")
 
         
+      }
+    )
+    this.apiservice.doPutRequest("/institute/update/"+s.id,req).subscribe(
+
+      data =>{
+        // this.toaster.success("Status Changed")
+        this.ngOnInit();
+      },
+      error =>{
+        // this.toaster.error("Unable to change status")
+  
       }
     )
   }
