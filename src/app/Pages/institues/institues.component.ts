@@ -10,6 +10,8 @@ import { ApiService } from 'src/app/services/api.service';
 export class InstituesComponent implements OnInit {
 
   institutes:any = [];
+  startdate;
+  enddates;
   constructor(private apiservice:ApiService,private toaster:ToastrService) { }
 
   ngOnInit(): void {
@@ -87,5 +89,34 @@ export class InstituesComponent implements OnInit {
   
       }
     )
+  }
+  startDate(event)
+  {
+    this.startdate = event.target.value;
+  }
+  endDate(event)
+  {
+    this.enddates = event.target.value;
+
+  }
+  apply()
+  {
+    if(this.startdate != null && this.enddates != null)
+    {
+      let req ={
+        "startDate":this.startdate,
+          "endDate":this.enddates
+      }
+      this.apiservice.doPostRequest("institute/byDate",req).subscribe(
+        data =>{
+          console.log(data);
+          this.institutes = data['data']
+        },
+        error =>{
+  
+        }
+      )
+    }
+   
   }
 }

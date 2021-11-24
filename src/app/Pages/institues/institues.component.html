@@ -11,6 +11,20 @@
 </div>
 
 
+<div class="row">
+    <div class="col-sm-3">
+        <label for="">Start Date</label>
+        <input type="date" class="form-control" (change)="startDate($event)">
+    </div>
+    <div class="col-sm-3">
+        <label for="">End Date</label>
+        <input type="date" class="form-control"  (change)="endDate($event)">
+    </div>
+    <div class="col-sm-3">
+      <button style="margin-top: 29px;" class="btn btn-danger" (click)="apply()">Apply Filter</button>
+    </div>
+</div>
+
 <div class="container">
     <div class="row text-center mt-5">
 

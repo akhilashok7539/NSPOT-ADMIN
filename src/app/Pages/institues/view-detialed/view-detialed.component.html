@@ -408,8 +408,8 @@
                         <h3 style="font-size: 14px;" *ngIf="item.CourseCategory !=null">{{item.CourseCategory.title}}
                         </h3>
 
-                        <p>Course Code :{{item.courseCode}}</p>
-
+                        <p class="paragraph">{{item.CourseName}}</p>
+                        <button class="coursebtn" (click)="viewcourse(item)">View Course Detailed</button>
                     </div>
                 </div>
 
@@ -432,12 +432,12 @@
         <div class="row">
             <div class="col-sm-6">
                
-                <button class="search-teachers btnBottom">Campus Overview</button>
-                <button class="search-teachers btnBottom">Class Room Tour</button>
-                <button class="search-teachers btnBottom">Lab Tour</button>
-                <button class="search-teachers btnBottom">Librabry</button>
-                <button class="search-teachers btnBottom">Recreational Area</button>
-                <button class="search-teachers btnBottom">Hostel Tour</button>
+                <button class="search-teachers btnBottom" (click)="Campustour()">Campus Tour</button>
+                <button class="search-teachers btnBottom" (click)="classroom()">Class Room Tour</button>
+                <button class="search-teachers btnBottom" (click)="lab()">Lab Tour</button>
+                <button class="search-teachers btnBottom" (click)="library()">Librabry</button>
+                <button class="search-teachers btnBottom" (click)="Recreationalarea()">Recreational Area</button>
+                <button class="search-teachers btnBottom" (click)="hosteltour()">Hostel Tour</button>
             </div>
             <div class="col-sm-6">
                 <ul class="social" style="margin-top: 26px;">

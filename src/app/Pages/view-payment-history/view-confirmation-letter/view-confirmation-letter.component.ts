@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { jsPDF } from 'jspdf';
 
 @Component({
   selector: 'app-view-confirmation-letter',
@@ -8,7 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./view-confirmation-letter.component.css']
 })
 export class ViewConfirmationLetterComponent implements OnInit {
-  // @ViewChild('pdfTable', { static: false }) pdfTable: ElementRef;
+  @ViewChild('pdfTable', { static: false }) pdfTable: ElementRef;
   applicationId;
   studentDetails:any=[];
   responselist:any = [];
@@ -17,9 +18,13 @@ export class ViewConfirmationLetterComponent implements OnInit {
   courseFeelist:any=[];
   admissionOfficerList:any=[];
   institutelist:any=[];
+  institutetype:any = [];
+  courseInfo:any=[];
+  isNri = false;
   constructor(private activaterouterparams:ActivatedRoute,private apiservice:ApiService) { }
 
   ngOnInit(): void {
+    this.isNri = JSON.parse(localStorage.getItem("isNri"))
     this.activaterouterparams.paramMap.subscribe(
       data =>{
         console.log(data['params'].applicationId);
@@ -27,6 +32,24 @@ export class ViewConfirmationLetterComponent implements OnInit {
         this.getstudnetdetails();
       }
     )
+    this.loaddata();
+  }
+  loaddata()
+  {
+    this.apiservice.doGetRequest("/institute-types").subscribe(
+      data =>{
+        console.log(data);
+        this.institutetype =data;
+      },
+      error =>{
+        console.log(error);
+
+      }
+    )
+  }
+  gettype(s)
+  {
+    return this.institutetype.filter(el => el.id === s)
   }
   getstudnetdetails()
   {
@@ -38,6 +61,7 @@ export class ViewConfirmationLetterComponent implements OnInit {
         this.courseFeelist = data['courseFee'];
         this.admissionOfficerList = data['admissionOfficer'];
         this.institutelist= data['institute'];
+        this.courseInfo = data['data'].Institute_Course;
         console.log(this.studentDetails);
         this.getcourseName();
 
@@ -49,17 +73,17 @@ export class ViewConfirmationLetterComponent implements OnInit {
   } 
   download()
   {
-    // const doc = new jsPDF();
+    const doc = new jsPDF('p', 'mm', 'a4');
 
-    // const pdfTable = this.pdfTable.nativeElement;
+    const pdfTable = this.pdfTable.nativeElement;
 
-    // doc.html(pdfTable, {
-    //   callback: function (doc) {
-    //     doc.save('ApplicationForm.pdf');
-    //   },
-    //   margin: [80,80, 80,80],
-    //   html2canvas: { scale: .18 },
-    // });
+    doc.html(pdfTable, {
+      callback: function (doc) {
+        doc.save('Confirmationletter.pdf');
+      },
+      margin: [0,0, 0,0],
+      html2canvas: { scale: .18 },
+    });
 
   }
 
@@ -88,4 +112,7 @@ export class ViewConfirmationLetterComponent implements OnInit {
       }
     )
   }
+  onImgError(event) { 
+    event.target.src = 'https://stockpictures.io/wp-content/uploads/2020/01/image-not-found-big-768x432.png';
+}
 }

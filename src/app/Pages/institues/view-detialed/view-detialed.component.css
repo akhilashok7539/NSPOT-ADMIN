@@ -33,3 +33,16 @@ h4{
 {.container, .container-lg, .container-md, .container-sm, .container-xl {
     max-width: 91%;
 }}
+
+.coursebtn{
+    background: azure;
+    border: none;
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+
+}
+.paragraph{
+    text-align: center;
+}
