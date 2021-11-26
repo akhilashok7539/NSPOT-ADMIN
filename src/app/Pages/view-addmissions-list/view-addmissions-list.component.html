@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h4>{{collegeName}}</h4>
+    </div>
+
+  
+
+    
+    <div class="col-sm-4 selectbox">
+        <select (change)="changeCourse($event)" name="type" class="form-control">
+
+            <option value="" disabled selected>SELECT COURSE / PROGRAM </option>
+            <option *ngFor="let item of courses" value="{{item.item.id}}">{{item.CourseName}}
+            </option>
+            <!-- <option *ngIf="courses.length ===0" value="">--- No courses added yet ---</option> -->
+        </select>
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 selectbox" >
+        <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search NSPOT ID">
+
+    </div>
+
+    <div class="col-sm-12" style="    margin-top: 15px;">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>SL.No</th>
+                    <th>NAME OF APPLICANT</th>
+                    <th>NSPOT REF ID</th>
+                    <!-- <th>DOWNLOAD APPLICATION</th> -->
+                    <!-- <th>CHAT</th> -->
+                    <!-- <th>DATE OF REPORTING</th> -->
+                    <!-- <th>DATE OF APTITUDE TEST</th>
+                    <th>DATE OF APTITUDE TEST MARKS</th> -->
+                    <!-- 
+                    <th>DATE OF ONLINE INTERVIEW</th>
+                    <th>DATE OF ONLINE INTERVIEW MARKS</th> -->
+
+
+                    <th style="text-align: center;">STUDENT ADMISSION NUMBER <br>
+                        (as per institute records) </th>
+                    <th>DETAILS</th>
+                    <th>PAYMENT STATUS</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of feeremmitedSApplicants | filtercustome:searchText; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{getname(item)}}</td>
+                    <td>{{item?.item?.ApplicationForm_submission?.nSpotReferenceId}}</td>
+
+
+                    <!-- <td>{{item?.item?.ApplicationForm_submission.endDateTimeOfAptitudeTest | date:'MMM d, y'}}</td>
+                    <td>{{item?.item?.ApplicationForm_submission.onlineinterviewstatus}}</td>
+
+                    <td>{{item?.item?.ApplicationForm_submission.dateOfInterview | date:'MMM d, y'}}</td>
+                    <td>{{item?.item?.ApplicationForm_submission.onlineinterviewstatus}}</td> -->
+
+                    <td>{{item?.item?.ApplicationForm_submission?.admissionId}}</td>
+                    <td>
+                        <a (click)="viewapplication(item)">View</a>
+                    </td>
+                    <td>PAYMENT COMPLETED</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

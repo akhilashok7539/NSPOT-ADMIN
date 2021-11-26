@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -12,7 +13,8 @@ export class InstituesComponent implements OnInit {
   institutes:any = [];
   startdate;
   enddates;
-  constructor(private apiservice:ApiService,private toaster:ToastrService) { }
+  constructor(private apiservice:ApiService,private router:Router,
+    private toaster:ToastrService) { }
 
   ngOnInit(): void {
     this.getallinstitues();
@@ -118,5 +120,11 @@ export class InstituesComponent implements OnInit {
       )
     }
    
+  }
+  view(item)
+  {
+    console.log(item);
+    this.router.navigate(['/viewAdmissionslist/'+item.id+'/'+item.name])
+    
   }
 }

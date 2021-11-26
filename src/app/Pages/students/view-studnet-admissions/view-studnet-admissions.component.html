@@ -1,0 +1,20 @@
+<div class="contianer">
+    <div class="row">
+        <div class="col-sm-12" style="    padding: 48px;">
+            <input type="text" placeholder="Search NSPOT Reference ID" [(ngModel)]="search" class="form-control">
+        </div>
+        <div class="col-sm-12" *ngFor="let resposneList of resposneList | filtercustomestudnets:search;">
+            <div class="card">
+                <p style="font-weight: bold;">{{resposneList.CourseName}}</p>
+                <h6 style="font-weight: bold;">Reference Id : {{resposneList?.item?.nSpotReferenceId}}</h6>
+                <h6>Application Status : {{resposneList?.item?.applicationStatus}}</h6>
+                <h6 *ngIf="resposneList?.student?.isNRI === true">Spot Fee Payment : {{resposneList?.courseFee?.nriSpotfee}}</h6>
+                <h6 *ngIf="resposneList?.student?.isNRI === false">Spot Fee Payment : {{resposneList?.courseFee?.spotfee}}</h6>
+                <h6>College Admission Id : {{resposneList?.item?.admissionId}}</h6>
+                <!-- <h6>Applicant Name : {{getapplicantname(resposneList)}}</h6> -->
+                <button class="btn btn-success" (click)="viewCourse(resposneList)">View Course</button>
+            </div>
+        </div>
+        <!-- <p *ngIf="resposneList.length === 0"> No data Found</p> -->
+    </div>
+</div>

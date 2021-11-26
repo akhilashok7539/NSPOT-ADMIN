@@ -75,7 +75,13 @@ import {FilterPipe} from './pipes/FilterPipe';
 import { ViewConfirmationLetterComponent } from './Pages/view-payment-history/view-confirmation-letter/view-confirmation-letter.component';
 import { UploadReceiptComponent } from './Pages/view-payment-history/upload-receipt/upload-receipt.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {FilterPipecustome} from './Pages/view-addmissions-list/searchfilter';
 import { MakePaymentInstituteComponent } from './Pages/view-payment-history/make-payment-institute/make-payment-institute.component';
+import { ViewAddmissionsListComponent } from './Pages/view-addmissions-list/view-addmissions-list.component';
+import { ViewApplicationsComponent } from './Pages/view-addmissions-list/view-applications/view-applications.component';
+import { StudentsComponent } from './Pages/students/students.component';
+import { ViewStudnetAdmissionsComponent } from './Pages/students/view-studnet-admissions/view-studnet-admissions.component';
+import {FilterPipecustomestudents} from './Pages/students/view-studnet-admissions/searchfiltercustome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -134,13 +140,19 @@ import { MakePaymentInstituteComponent } from './Pages/view-payment-history/make
     AddBoardComponent,
     EditBoardComponent,
     FilterPipe,
+    FilterPipecustome,
+    FilterPipecustomestudents,
     AddOtherboardComponent,
     UpdateOtherboardComponent,
     ViewCoursedetailsComponent,
     ViewPaymentHistoryComponent,
     ViewConfirmationLetterComponent,
     UploadReceiptComponent,
-    MakePaymentInstituteComponent
+    MakePaymentInstituteComponent,
+    ViewAddmissionsListComponent,
+    ViewApplicationsComponent,
+    StudentsComponent,
+    ViewStudnetAdmissionsComponent
   ],
   imports: [
     BrowserModule,
@@ -155,6 +167,7 @@ import { MakePaymentInstituteComponent } from './Pages/view-payment-history/make
     SweetAlert2Module.forRoot(),
     ReactiveFormsModule,
     HttpClientModule
+   
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },

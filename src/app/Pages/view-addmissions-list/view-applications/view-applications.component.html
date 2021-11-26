@@ -1,0 +1,361 @@
+<div class="container" id="pdfTable" style="    width: 1133px;
+    background: white;">
+    <div class="row" style="padding: 86px;">
+        <div class="col-sm-12">
+            <img src="https://nspot-server.herokuapp.com/{{instituteDetailed?.profilePicFile}}"
+                (error)="onImgError($event)" alt="" style="width: 200px;
+        margin: 0 auto;
+        display: block;">
+            <h6 style="text-align: center;    margin-top: 21px;font-size: 31px;">{{instituteDetailed?.name}}</h6>
+            <p style="text-align: center;margin-bottom: 11px;">
+                {{instituteDetailed?.nameofTown}},{{instituteDetailed?.block}},{{instituteDetailed?.district}},{{instituteDetailed?.state}}
+            </p>
+
+
+            <div class="card">
+
+                <div class="row">
+
+
+                    <h5 class="headers">INSTITUTION INFO </h5>
+
+                </div>
+                <div class="row" style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p> Institution Reg/Ref:No.(Enter Manually at the time of Admission Confirmation)</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> .................................................</p>
+                    </div>
+
+                </div>
+                <div class="row" style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p> Admission Application Submitted Date</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;
+        ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> {{applicationData?.createdAt | date }}</p>
+                    </div>
+
+                </div>
+
+
+                <div class="row" style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p> Admission Application Number</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;
+        ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> {{collegeadmisionIdStudent}}</p>
+                    </div>
+
+                </div>
+
+
+                <div class="row" style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p> Admission Application for the Academic Year</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;
+        ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p>{{getcurrentyear()}}
+                        <p>
+                    </div>
+
+                </div>
+                <div class="row" style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p>NSpot Reference No </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;
+        ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> {{applicationData?.nSpotReferenceId}}
+                        <p>
+                    </div>
+
+                </div>
+
+
+
+                <div class="row" style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p>Roll No & Year (Enter Manually at the time of Admission Confirmation)</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;
+        ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> .................................................</p>
+                    </div>
+
+                </div>
+
+
+                <div class="row" style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p>Institution Name</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;
+        ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> {{instituteDetailed?.name}}
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- <div class="row" style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p>Institution Type</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;
+        ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> .................................................</p>
+
+                    </div>
+
+                </div> -->
+
+
+                <div class="row" style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p> Institution Category</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;
+        ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> {{instituteDetailed?.institute_category}}</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row" style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p> Institution Head Office/Corporate Address</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;
+        ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> {{instituteDetailed?.addressLine1}},{{instituteDetailed?.addressLine1}},{{instituteDetailed?.addressLine1}}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="row">
+
+
+                    <h5 class="headers">PERSONAL INFORMATIONS OF THE APPLICANT </h5>
+                    <!-- <img src="./assets/images/kyc.png" alt="" style="
+       width: 139px; float: right; margin-top: -65px; margin-right: 30px;height: 137px;"> -->
+                </div>
+
+                <hr>
+                <div class="row" *ngFor="let item of personalInfo;let i=index"
+                    style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p>{{insertSpaces(personalInfoKeys[i]) | titlecase}}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+              text-align: center;
+          ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> {{item | titlecase}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--ADD_PAGE-->
+
+            <div class="card">
+                <h5 class="headers">PERMANENT ADDRESS </h5>
+                <hr>
+
+                <div class="row" *ngFor="let item of permanentAddress;let i=index"
+                    style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p>{{insertSpaces(permanentAddressKeys[i]) | titlecase}}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;
+        ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> {{item | titlecase}}</p>
+                    </div>
+
+
+                </div>
+                <h5 class="headers">COMMUNICATION ADDRESS</h5>
+                <hr>
+
+                <div class="row" *ngFor="let item of communicationAddress;let i=index"
+                    style="margin-top: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;">
+                    <div class="col-sm-5">
+                        <p>{{insertSpaces(communicationAddressKeys[i]) | titlecase}}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="
+            text-align: center;
+        ">:</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p> {{item | titlecase}}</p>
+                    </div>
+                </div>
+                <h5 class="headers">EDUCATION DETAILS</h5>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div *ngFor="let item of education;let j=index">
+                            <div  *ngFor="let item of education[j];let i=index" style="display: flex;margin: 14px;">
+                                <!-- <div class="checkBox" style="float: left;
+                                width: 30%;
+                                margin: 0 30px 0 30px;">
+                                    <p>{{insertSpaces(educationKeys?educationKeys[j][i]:'')}}</p>
+                                </div>
+                                <div class="labels">
+                                    <p><span>:</span>{{item}}</p>
+                                </div>
+                                <div class="clearfix"></div> -->
+
+                                <div class="col-sm-5">
+                                    <p style="color: #67757c;">{{insertSpaces(educationKeys?educationKeys[j][i]:'')}}</p>
+                                </div>
+                                <div class="col-sm-2">
+                                    <h4 style="text-align: center;color: #67757c;">:</h4>
+                                </div>
+                                <div class="col-sm-5">
+                                    <h4 style="color: #67757c;">{{item}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="headers">ENTRANCE DETAILS</h5>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="additionalForm" *ngFor="let item of entrance;let j=index">
+                            <div class="applicationFormItem" *ngFor="let item of entrance[j];let i=index" style="display: flex;margin: 14px;">
+                                <!-- <div class="checkBox">
+                                    <p>{{insertSpaces(entranceKeys[j][i])}}</p>
+                                </div>
+                                <div class="labels">
+                                    <p><span>:</span>{{item}}</p>
+                                </div>
+                                <div class="clearfix"></div> -->
+                                <div class="col-sm-5">
+                                    <!-- <h4 style="color: #67757c;">{{insertSpaces(educationKeys?educationKeys[j][i]:'')}}</h4> -->
+                                    <p>{{insertSpaces(entranceKeys[j][i])}}</p>
+                                </div>
+                                <div class="col-sm-2">
+                                    <h4 style="text-align: center;color: #67757c;">:</h4>
+                                </div>
+                                <div class="col-sm-5">
+                                    <h4 style="color: #67757c;">{{item}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- <h5 class="headers">CERTIFICATE DETAILS</h5> -->
+                <p style="    font-size: 19px; font-weight: 500;"> <input type="checkbox" checked disabled style="width: 44px;">Rules and
+                    Regulatons of the Institution
+                </p>
+
+                <p style="    font-size: 19px;"> <input type="checkbox" checked disabled style="width: 44px;">I Agreee
+                    hereby declare that NPSOT TERMS
+                </p>
+                <p style="    font-size: 19px;"> <input type="checkbox" checked disabled style="width: 44px;">I Agreee
+                    hereby declare that NSPOT PRIVACY
+                </p>
+                <p style="    font-size: 19px;"> <input type="checkbox" checked disabled style="width: 44px;">I certify
+                    that the information submitted by me in support of this application is true to the best of my
+                    knowledge and belief.
+
+                </p>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <img *ngIf="studentDetailedlist?.isFilledByFather" src="https://nspot-server.herokuapp.com/{{fathersSignatureFile}}" alt="" style="    float: right;width: 136px;">
+                        <img *ngIf="studentDetailedlist?.isFilledByGaurdian" src="https://nspot-server.herokuapp.com/{{guardiansSignatureFile}}" alt="" style="    float: right;width: 136px;">
+                        <img *ngIf="studentDetailedlist?.isFilledByMyself" src="https://nspot-server.herokuapp.com/{{studentsignatureFile}}" alt="" style="    float: right;width: 136px;">
+                     
+                    </div>
+                   <div class="col-sm-12">
+                    <p style="float: right;
+                    margin-top: 20px;
+                    margin-right: 11px;
+                    font-size: 23px;
+                    font-weight: bold;">Signature</p>
+                   </div>
+                  
+                    <!-- <input type="checkbox" checked>I accept the Terms of Service -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container">
+        <button class="downloaddoc" (click)="doc()">Download Documents</button>
+
+    </div> -->
+
+
+</div>
+<!-- </div>
+</div> -->

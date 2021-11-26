@@ -46,6 +46,10 @@ import { ViewPaymentHistoryComponent } from './Pages/view-payment-history/view-p
 import { ViewConfirmationLetterComponent } from './Pages/view-payment-history/view-confirmation-letter/view-confirmation-letter.component';
 import { UploadReceiptComponent } from './Pages/view-payment-history/upload-receipt/upload-receipt.component';
 import { MakePaymentInstituteComponent } from './Pages/view-payment-history/make-payment-institute/make-payment-institute.component';
+import { ViewAddmissionsListComponent } from './Pages/view-addmissions-list/view-addmissions-list.component';
+import { ViewApplicationsComponent } from './Pages/view-addmissions-list/view-applications/view-applications.component';
+import { StudentsComponent } from './Pages/students/students.component';
+import { ViewStudnetAdmissionsComponent } from './Pages/students/view-studnet-admissions/view-studnet-admissions.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -107,6 +111,12 @@ const routes: Routes = [
       { path: 'view-confirmationletter/:applicationId', component: ViewConfirmationLetterComponent },
       { path: 'upload-recipt/:id', component: UploadReceiptComponent },
       { path: 'checkout-payment', component: MakePaymentInstituteComponent },
+      { path: 'viewAdmissionslist/:id/:name', component: ViewAddmissionsListComponent },
+
+      { path: 'viewApplications/:id/:instituteId', component: ViewApplicationsComponent },
+
+      { path: 'students', component: StudentsComponent },
+      { path: 'student/:id/:name', component: ViewStudnetAdmissionsComponent },
 
 
     ],

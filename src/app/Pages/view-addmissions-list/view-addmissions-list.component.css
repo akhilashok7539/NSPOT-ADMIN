@@ -1,0 +1,17 @@
+h4{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+.col-sm-12{
+    padding: 25px;
+    background: #242a33;
+    border-bottom: 4px solid red;
+}
+.selectbox{
+    padding-left: 1px;
+    margin-top: 8px;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background: #242a33;
+}
