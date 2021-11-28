@@ -41,13 +41,24 @@ export class ViewAddmissionsListComponent implements OnInit {
   }
   loadDataForCourse(currentCourseId)
   {
-    this.apiService.doGetRequest('payment/courseFee/institute/'+currentCourseId).subscribe(
+    let courseFeeRemittedreq ={
+      "courseId":currentCourseId,
+     
+    }
+    this.apiService.doPostRequest('payment/courseFee/institute/',courseFeeRemittedreq).subscribe(
       data =>{
         console.log(data);
         
         let arr = [];
         arr = data['result']
         // console.log("Fee paid students list",arr);
+        if( data['result'].length === 0)
+        {
+          this.feeremmitedSApplicants = [];
+        }
+        else{
+  
+  
         for(let i=0;i<=arr.length;i++)
         {
           if(arr[i]?.item?.status === "paid")
@@ -55,6 +66,7 @@ export class ViewAddmissionsListComponent implements OnInit {
             this.feeremmitedSApplicants.push(arr[i])
           }
         }
+      }
         console.log("Fee paied students",this.feeremmitedSApplicants);
         
       },

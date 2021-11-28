@@ -1,2 +1,58 @@
-<p>make-payment-institute works!</p>
-<button (click)="pay()">pay</button>
+<main>
+    <div class="page-heading text-center">
+        <div class="container">
+            <h2 class="uppercase">Checkout</h2>
+        </div>
+    </div>
+    <!-- <button class="btn greybutton pull-right" (click)="pay()">Pay and Confirm your seat</button> -->
+
+    <!-- <pre>{{removedFields |json}}</pre> -->
+    <div class="container contact">
+        <div class="row contact">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 col-sm-10">
+
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Amount</th>
+                                <th>Fee</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Amount</td>
+                                <td>Rs.{{orderamountlist.amount / 100 }} /-</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>Total</th>
+                                <th>Rs.{{orderamountlist.amount / 100}} /-</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th><button class="btn greybutton pull-right" (click)="pay()">Pay and Confirm your seat</button>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- <div *ngIf="!canPay">
+                    <div *ngIf="didPay">
+                        <div class="alert alert-success">{{cantPayReason}}</div>
+                    </div>
+                    <div *ngIf="!didPay">
+                        <div class="alert alert-warning">{{cantPayReason}}</div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+</main>

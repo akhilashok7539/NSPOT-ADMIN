@@ -10,9 +10,14 @@
                 <h6>Application Status : {{resposneList?.item?.applicationStatus}}</h6>
                 <h6 *ngIf="resposneList?.student?.isNRI === true">Spot Fee Payment : {{resposneList?.courseFee?.nriSpotfee}}</h6>
                 <h6 *ngIf="resposneList?.student?.isNRI === false">Spot Fee Payment : {{resposneList?.courseFee?.spotfee}}</h6>
+                <h6>Institute Name : {{resposneList?.item?.Institute_Course?.Institute?.name}}</h6>
                 <h6>College Admission Id : {{resposneList?.item?.admissionId}}</h6>
                 <!-- <h6>Applicant Name : {{getapplicantname(resposneList)}}</h6> -->
-                <button class="btn btn-success" (click)="viewCourse(resposneList)">View Course</button>
+                <div class="divtag">
+                    <button class="btn btn-success" (click)="viewCourse(resposneList)">View Course</button>
+                    <button class="btn btn-warning" (click)="viewapplciations(resposneList)">View Applications</button>
+                </div>
+             
             </div>
         </div>
         <!-- <p *ngIf="resposneList.length === 0"> No data Found</p> -->

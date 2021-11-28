@@ -38,5 +38,11 @@ export class ViewStudnetAdmissionsComponent implements OnInit {
   {
     this.router.navigate(['/view-coursedetails/'+s.item.courseId+'/'+s.CourseName])
   }
- 
+  viewapplciations(s)
+  {
+    console.log(s);
+    
+    // viewApplications/1/7
+    this.router.navigate(['/viewApplications/'+s.item.id+'/'+s.item.Institute_Course.Institute.userId])
+  }
 }

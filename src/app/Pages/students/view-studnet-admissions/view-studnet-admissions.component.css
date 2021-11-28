@@ -2,3 +2,10 @@
 {
     padding: 30px;
 }
+.divtag{
+    display: flex;
+    justify-content: center;
+}
+.btn-success{
+    margin-right: 10px;
+}

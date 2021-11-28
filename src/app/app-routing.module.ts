@@ -110,7 +110,7 @@ const routes: Routes = [
       { path: 'view-paymenthistory', component: ViewPaymentHistoryComponent },
       { path: 'view-confirmationletter/:applicationId', component: ViewConfirmationLetterComponent },
       { path: 'upload-recipt/:id', component: UploadReceiptComponent },
-      { path: 'checkout-payment', component: MakePaymentInstituteComponent },
+      { path: 'checkout-payment/:applicationId/:courseId/:instituteId', component: MakePaymentInstituteComponent },
       { path: 'viewAdmissionslist/:id/:name', component: ViewAddmissionsListComponent },
 
       { path: 'viewApplications/:id/:instituteId', component: ViewApplicationsComponent },

@@ -70,41 +70,43 @@
 
 
 <div fxLayout="column" class="headerdiv">
-	<section fxLayoutAlign="space-between end" fxFlex="100" class="heading-row">
-		<p fxFlex="10">Course Name</p>
-		<p fxFlex="20">Institue Name</p>
-		<p fxFlex="">Transaction ID</p>
-		<p fxFlex="16">Payment Date</p>
-		<p fxFlex="16">Status</p>
-	</section>
+    <section fxLayoutAlign="space-between end" fxFlex="100" class="heading-row">
+        <p fxFlex="10">Course Name</p>
+        <p fxFlex="20">Institue Name</p>
+        <p fxFlex="">Transaction ID</p>
+        <p fxFlex="16">Payment Date</p>
+        <p fxFlex="16">Status</p>
+    </section>
 
-	<mat-accordion [displayMode]="'flat'">
+    <mat-accordion [displayMode]="'flat'">
 
-		<mat-expansion-panel *ngFor="let item of courslistupdated;let i=index">
-			<mat-expansion-panel-header>
-				<section fxLayoutAlign="space-between end" fxFlex="100">
-					<p fxFlex="10">{{getcourseName(item)}}</p>
-					<p fxFlex="20">{{getinstituteName(item)}}</p>
-					<p fxFlex="">{{item.item?.localTransactionId}}</p>
-					<p fxFlex="16">{{item.item?.createdAt | date:'fullDate'}}</p>
-					<p fxFlex="16" style="margin-right: 17px;">
-                       
+        <mat-expansion-panel *ngFor="let item of courslistupdated;let i=index">
+            <mat-expansion-panel-header>
+                <section fxLayoutAlign="space-between end" fxFlex="100">
+                    <p fxFlex="10">{{getcourseName(item)}}</p>
+                    <p fxFlex="20">{{getinstituteName(item)}}</p>
+                    <p fxFlex="">{{item.item?.localTransactionId}}</p>
+                    <p fxFlex="16">{{item.item?.createdAt | date:'fullDate'}}</p>
+                    <p fxFlex="16" style="margin-right: 17px;">
+
                         <span class="spantag"> Payment Done</span>
                     </p>
-				</section>
-			</mat-expansion-panel-header>
+                </section>
+            </mat-expansion-panel-header>
             <div class="expansion">
-	<p ><button class="btn btn-info" routerLink="/view-confirmationletter/{{item.item.applicationId}}">View Confirmation Letter</button></p>
-    <p ><button class="btn btn-info" (click)="viewcourse(item)">View Course</button></p>
-    <p><button class="btn btn-info" (click)="uploadRecipt(item)">Upload Recipt</button></p>
-    <p><button class="btn btn-info" (click)="viewRecipt(item)">Download Uploaded Recipt Institute</button></p>
-    <p><button class="btn btn-danger" (click)="viewRecipt(item)">Make Payment to Institute</button></p>
+                <p><button class="btn btn-info" routerLink="/view-confirmationletter/{{item.item.applicationId}}">View
+                        Confirmation Letter</button></p>
+                <p><button class="btn btn-info" (click)="viewcourse(item)">View Course</button></p>
+                <p><button class="btn btn-info" (click)="uploadRecipt(item)">Upload Recipt</button></p>
+                <p><button class="btn btn-info" (click)="viewRecipt(item)">Download Uploaded Recipt Institute</button>
+                </p>
+                <p><button class="btn btn-danger" (click)="makePayment(item)" *ngIf="item?.item?.isAdminPayedInstitute === false">Make Payment to Institute</button></p>
 
             </div>
-		
-		</mat-expansion-panel>
 
-	</mat-accordion>
+        </mat-expansion-panel>
 
-  
+    </mat-accordion>
+
+
 </div>

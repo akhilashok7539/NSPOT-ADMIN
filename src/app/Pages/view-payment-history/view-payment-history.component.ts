@@ -155,7 +155,7 @@ export class ViewPaymentHistoryComponent implements OnInit {
     // console.log(view.item.transactionRecipt);
     if(view.item.transactionRecipt)
     {
-      window.open(" https://nspot-server.herokuapp.com/"+view.item.transactionRecipt,"_blank")
+      window.open(" https://nspot-qa.herokuapp.com/"+view.item.transactionRecipt,"_blank")
 
     }
     else{
@@ -166,5 +166,14 @@ export class ViewPaymentHistoryComponent implements OnInit {
   uploadRecipt(item)
   {
     this.router.navigate(['/upload-recipt/'+item.item.id]);
+  }
+  makePayment(item)
+  {
+    console.log(item);
+    let applicationID = item?.item?.applicationId;
+    let courseId= item?.course?.id;
+    let instituteid =item?.course?.Institute?.id;
+    this.router.navigate(['/checkout-payment/'+applicationID+'/'+courseId+'/'+instituteid])
+    // checkout-payment/:applicationId/:courseId/:studentId
   }
 }

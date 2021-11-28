@@ -2,7 +2,7 @@
     background: white;">
     <div class="row" style="padding: 86px;">
         <div class="col-sm-12">
-            <img src="https://nspot-server.herokuapp.com/{{instituteDetailed?.profilePicFile}}"
+            <img src="https://nspot-qa.herokuapp.com/{{instituteDetailed?.profilePicFile}}"
                 (error)="onImgError($event)" alt="" style="width: 200px;
         margin: 0 auto;
         display: block;">
@@ -331,9 +331,9 @@
                 </p>
                 <div class="row">
                     <div class="col-sm-12">
-                        <img *ngIf="studentDetailedlist?.isFilledByFather" src="https://nspot-server.herokuapp.com/{{fathersSignatureFile}}" alt="" style="    float: right;width: 136px;">
-                        <img *ngIf="studentDetailedlist?.isFilledByGaurdian" src="https://nspot-server.herokuapp.com/{{guardiansSignatureFile}}" alt="" style="    float: right;width: 136px;">
-                        <img *ngIf="studentDetailedlist?.isFilledByMyself" src="https://nspot-server.herokuapp.com/{{studentsignatureFile}}" alt="" style="    float: right;width: 136px;">
+                        <img *ngIf="studentDetailedlist?.isFilledByFather" src="https://nspot-qa.herokuapp.com/{{fathersSignatureFile}}" alt="" style="    float: right;width: 136px;">
+                        <img *ngIf="studentDetailedlist?.isFilledByGaurdian" src="https://nspot-qa.herokuapp.com/{{guardiansSignatureFile}}" alt="" style="    float: right;width: 136px;">
+                        <img *ngIf="studentDetailedlist?.isFilledByMyself" src="https://nspot-qa.herokuapp.com/{{studentsignatureFile}}" alt="" style="    float: right;width: 136px;">
                      
                     </div>
                    <div class="col-sm-12">
