@@ -71,7 +71,7 @@
 
 <div fxLayout="column" class="headerdiv">
     <section fxLayoutAlign="space-between end" fxFlex="100" class="heading-row">
-        <p fxFlex="10">Course Name</p>
+        <p fxFlex="">Course Name</p>
         <p fxFlex="20">Institue Name</p>
         <p fxFlex="">Transaction ID</p>
         <p fxFlex="16">Payment Date</p>
@@ -83,7 +83,7 @@
         <mat-expansion-panel *ngFor="let item of courslistupdated;let i=index">
             <mat-expansion-panel-header>
                 <section fxLayoutAlign="space-between end" fxFlex="100">
-                    <p fxFlex="10">{{getcourseName(item)}}</p>
+                    <p fxFlex="">{{getcourseName(item)}}</p>
                     <p fxFlex="20">{{getinstituteName(item)}}</p>
                     <p fxFlex="">{{item.item?.localTransactionId}}</p>
                     <p fxFlex="16">{{item.item?.createdAt | date:'fullDate'}}</p>

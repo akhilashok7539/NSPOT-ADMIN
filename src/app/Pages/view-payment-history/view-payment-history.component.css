@@ -23,6 +23,9 @@
   ::ng-deep .mat-expansion-panel-body{
     padding: 0px !important;
   }
+  ::ng-deep  .mat-expansion-panel-header{
+    height: 100px !important;
+  }
   .section-inner{
     width: 100%;display: flex;
     justify-content: space-between;
