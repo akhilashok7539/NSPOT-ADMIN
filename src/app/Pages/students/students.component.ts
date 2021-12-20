@@ -33,4 +33,18 @@ export class StudentsComponent implements OnInit {
     this.router.navigate(['/student/'+s.id+'/'+s.firstName+''+s.middleName+''+s.lastName])
     // student
   }
+  getbydate(s)
+  {
+    let date = s.target.value;
+    console.log(date);
+    this.apiservice.doGetRequest("student/byDate/"+date).subscribe(
+      data =>{
+          console.log(data);
+          this.studentList = data['data'];
+      },  
+      error =>{
+
+      }
+    )
+  }
 }

@@ -28,6 +28,13 @@
     justify-content: center;">
         <h4>Total Number of Students : {{studentList.length}}</h4>
     </div>
+    <div class="col-sm-7">
+    </div>
+
+    <div class="col-sm-2">
+        <label for="">Filter By Date</label>
+        <input type="date" class="form-control" (change)="getbydate($event)">
+    </div>
 </div>
 
 <div class="container">
@@ -37,7 +44,7 @@
 
         <table class="table">
             <thead>
-                <tr >
+                <tr>
                     <th>No</th>
                     <th>Institute Name</th>
                     <th>Gender</th>
@@ -55,7 +62,7 @@
                     <td>{{item.gender}}</td>
                     <td>{{item.permanentTelephone}}</td>
                     <td>{{item.adharNumber}}</td>
-                    <td>{{item.createdAt | date:'dd MMM yyyy'}}</td>
+                    <td>{{item?.registedDate }}</td>
                     <td *ngIf="item.isNRI === true">Yes </td>
                     <td *ngIf="item.isNRI === false">No </td>
 
