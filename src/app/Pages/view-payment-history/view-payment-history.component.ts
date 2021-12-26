@@ -23,7 +23,10 @@ export class ViewPaymentHistoryComponent implements OnInit {
 
   getallcourser() {
 
-    this.apiserive.doGetRequest(`/payment/courseFee/admin`).subscribe(
+    let req ={
+
+    }
+    this.apiserive.doPostRequest(`payment/courseFee/admin`,req).subscribe(
       data => {
         this.courseslist = data['result']
         // console.log(this.courseslist);
@@ -47,6 +50,26 @@ export class ViewPaymentHistoryComponent implements OnInit {
     this.onFilter = index;
 
 
+  }
+  selectedDate(s)
+  {
+    let req ={
+      addedDate:s.target.value
+    }
+    this.apiserive.doPostRequest(`payment/courseFee/admin`,req).subscribe(
+      data => {
+        this.courslistupdated =[];
+        this.courseslist = data['result']
+        // console.log(this.courseslist);
+        for (let i = 0; i < this.courseslist.length; i++) {
+          if (this.courseslist[i]['item'].status === "paid") {
+            this.courslistupdated.push(this.courseslist[i])
+          }
+        }
+        console.log(this.courslistupdated);
+
+      }
+    )
   }
   getcoursename(id) {
     //  this.apiserive.doGetRequest("institute/course/courseName/"+id).subscribe(
