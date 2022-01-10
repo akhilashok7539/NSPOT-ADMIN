@@ -50,6 +50,7 @@ import { ViewAddmissionsListComponent } from './Pages/view-addmissions-list/view
 import { ViewApplicationsComponent } from './Pages/view-addmissions-list/view-applications/view-applications.component';
 import { StudentsComponent } from './Pages/students/students.component';
 import { ViewStudnetAdmissionsComponent } from './Pages/students/view-studnet-admissions/view-studnet-admissions.component';
+import { EditDeskComponent } from './Pages/dashboard/edit-desk/edit-desk.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -69,6 +70,8 @@ const routes: Routes = [
 
       { path: 'courses', component: CourcesComponent },
       { path: 'add-newdesk', component: DesktypeComponent },
+      { path: 'edit-desk', component: EditDeskComponent },
+
       { path: 'add', component: AddDesktypeComponent },
       { path: 'subcat2', component: Subcatgory2Component },
       { path: 'subcat3', component: Subcatgory3Component },

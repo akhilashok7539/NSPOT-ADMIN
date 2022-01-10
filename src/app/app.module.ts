@@ -82,6 +82,7 @@ import { ViewApplicationsComponent } from './Pages/view-addmissions-list/view-ap
 import { StudentsComponent } from './Pages/students/students.component';
 import { ViewStudnetAdmissionsComponent } from './Pages/students/view-studnet-admissions/view-studnet-admissions.component';
 import {FilterPipecustomestudents} from './Pages/students/view-studnet-admissions/searchfiltercustome';
+import { EditDeskComponent } from './Pages/dashboard/edit-desk/edit-desk.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -152,7 +153,8 @@ import {FilterPipecustomestudents} from './Pages/students/view-studnet-admission
     ViewAddmissionsListComponent,
     ViewApplicationsComponent,
     StudentsComponent,
-    ViewStudnetAdmissionsComponent
+    ViewStudnetAdmissionsComponent,
+    EditDeskComponent
   ],
   imports: [
     BrowserModule,

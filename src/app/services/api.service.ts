@@ -126,7 +126,10 @@ export class ApiService {
   {
     return this.http.post(this.SERVER_URL+endPoints.ADD_CATEGORYS_DESKTYPES,req);
   }
-
+  updatedesk(req)
+  {
+    return this.http.post(this.SERVER_URL+'course-categories/update',req);
+  }
   getallCategorysbyid(id)
   {
     return this.http.get(this.SERVER_URL+'course-categories/subcategory/'+id);

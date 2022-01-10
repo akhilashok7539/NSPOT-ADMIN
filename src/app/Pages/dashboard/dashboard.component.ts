@@ -32,6 +32,11 @@ export class DashboardComponent implements OnInit {
     sessionStorage.setItem("Categorys",JSON.stringify(s))
     this.router.navigate(['/categorys']);
   }
+  edit(s)
+  {
+    sessionStorage.setItem("maindesk",JSON.stringify(s))
+    this.router.navigate(['edit-desk'])
+  }
   delete(s)
   {
     let req = {

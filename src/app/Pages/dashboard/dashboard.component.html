@@ -7,6 +7,9 @@
             <div class="card" (click)="view(s)" style="background-color: #242a33;">
                 <img src="https://img.icons8.com/bubbles/100/000000/opened-folder.png" style="margin:0 auto;" />
                 <h6 style="color: white;">{{s.title}}</h6>
+                <button (click)="edit(s)" class="btn btn-warning">Edit</button>
+          
+
                 <!-- <div class="row">
                     <button matTooltip="Info about the action" class="edit" style="   background: #fce0a2;
                     border: none;

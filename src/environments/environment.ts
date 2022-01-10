@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   // apiUrl: 'http://localhost:3000/api/',
-  apiUrl: 'https://nspot-qa.herokuapp.com/api/',
-  baseApiUrl: 'https://nspot-qa.herokuapp.com/',
+  apiUrl: 'http://www.api.nspotadmissions.com/api/',
+  baseApiUrl: 'http://www.api.nspotadmissions.com/',
 
   adminPortalUrl: '',
   institutePortalUrl: '',
