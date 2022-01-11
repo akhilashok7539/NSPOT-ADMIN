@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   // apiUrl: 'http://localhost:3000/api/',
-  apiUrl: 'http://www.api.nspotadmissions.com/api/',
-  baseApiUrl: 'http://www.api.nspotadmissions.com/',
+  apiUrl: 'https://www.api.nspotadmissions.com/api/',
+  baseApiUrl: 'https://www.api.nspotadmissions.com/',
 
   adminPortalUrl: '',
   institutePortalUrl: '',

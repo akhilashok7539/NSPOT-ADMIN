@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://www.api.nspotadmissions.com/api/',
-  baseApiUrl: 'http://www.api.nspotadmissions.com/',
+  apiUrl: 'https://www.api.nspotadmissions.com/api/',
+  baseApiUrl: 'https://www.api.nspotadmissions.com/',
 
   adminPortalUrl: '',
   institutePortalUrl: '',

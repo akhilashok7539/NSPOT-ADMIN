@@ -178,7 +178,7 @@ export class ViewPaymentHistoryComponent implements OnInit {
     // console.log(view.item.transactionRecipt);
     if(view.item.transactionRecipt)
     {
-      window.open(" http://www.api.nspotadmissions.com/"+view.item.transactionRecipt,"_blank")
+      window.open(" https://www.api.nspotadmissions.com/"+view.item.transactionRecipt,"_blank")
 
     }
     else{
