@@ -29,5 +29,10 @@ export class StatesComponent implements OnInit {
       }
     )
   }
+  edit(s){
+    sessionStorage.setItem("stateArray",JSON.stringify(s))
+    this.router.navigate(['/edit-states'])
+
+  }
  
 }

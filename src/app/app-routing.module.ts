@@ -51,6 +51,8 @@ import { ViewApplicationsComponent } from './Pages/view-addmissions-list/view-ap
 import { StudentsComponent } from './Pages/students/students.component';
 import { ViewStudnetAdmissionsComponent } from './Pages/students/view-studnet-admissions/view-studnet-admissions.component';
 import { EditDeskComponent } from './Pages/dashboard/edit-desk/edit-desk.component';
+import { EditStateComponent } from './Pages/states/edit-state/edit-state.component';
+import { EditDistrictComponent } from './Pages/district/edit-district/edit-district.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -93,8 +95,11 @@ const routes: Routes = [
 
       { path: 'states', component: StatesComponent },
       { path: 'add-states', component: AddStatesComponent },
+      { path: 'edit-states', component: EditStateComponent },
+
       { path: 'districts/:id', component: DistrictComponent },
       { path: 'add-districts/:id', component: AddDistrictComponent },
+      { path: 'edit-districts', component: EditDistrictComponent },
 
       { path: 'University', component: UniverisitiesComponent },
       { path: 'add-University', component: AddUniversityComponent },

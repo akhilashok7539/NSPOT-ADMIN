@@ -37,4 +37,10 @@ export class DistrictComponent implements OnInit {
   adddist(){
     this.router.navigate(['/add-districts/'+this.stateID]);
   } 
+  edit(s)
+  {
+    sessionStorage.setItem("distArray",JSON.stringify(s))
+    this.router.navigate(['/edit-districts']);
+    
+  }
 }

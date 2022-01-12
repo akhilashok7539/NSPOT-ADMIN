@@ -83,6 +83,8 @@ import { StudentsComponent } from './Pages/students/students.component';
 import { ViewStudnetAdmissionsComponent } from './Pages/students/view-studnet-admissions/view-studnet-admissions.component';
 import {FilterPipecustomestudents} from './Pages/students/view-studnet-admissions/searchfiltercustome';
 import { EditDeskComponent } from './Pages/dashboard/edit-desk/edit-desk.component';
+import { EditStateComponent } from './Pages/states/edit-state/edit-state.component';
+import { EditDistrictComponent } from './Pages/district/edit-district/edit-district.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -154,7 +156,9 @@ import { EditDeskComponent } from './Pages/dashboard/edit-desk/edit-desk.compone
     ViewApplicationsComponent,
     StudentsComponent,
     ViewStudnetAdmissionsComponent,
-    EditDeskComponent
+    EditDeskComponent,
+    EditStateComponent,
+    EditDistrictComponent
   ],
   imports: [
     BrowserModule,
