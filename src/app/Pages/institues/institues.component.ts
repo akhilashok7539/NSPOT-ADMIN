@@ -121,6 +121,20 @@ export class InstituesComponent implements OnInit {
     }
    
   }
+  sendcredntials(item)
+  {
+    this.apiservice.doGetRequest("institute/sendUserCredEmail/"+item.id).subscribe(
+      data=>{
+        this.toaster.success("credentials sent successfully");
+        
+      },
+      error=>{
+        this.toaster.success("unable to send the details");
+
+      }
+    )
+    // https://nspot-qa.herokuapp.com/api/institute//sendUserCredEmail/:instituteId
+  }
   view(item)
   {
     console.log(item);
