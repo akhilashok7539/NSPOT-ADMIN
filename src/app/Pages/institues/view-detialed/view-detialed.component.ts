@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { endPoints } from 'src/app/config/endPoints';
 import { ApiService } from 'src/app/services/api.service';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-detialed',
@@ -20,8 +21,10 @@ export class ViewDetialedComponent implements OnInit {
   gallery;
   baseApiUrl = environment.baseApiUrl;
   instituteIdDoc;
-  virtualTour:any=[];
-  constructor(private activaterouter: ActivatedRoute, private router:Router,
+  virtualTour: any = [];
+  bankItems = [];
+  subscriptionPLans = [];
+  constructor(private activaterouter: ActivatedRoute, private router: Router,
     private apiService: ApiService, private toastr: ToastrService) {
     this.activaterouter.paramMap.subscribe(params => {
       console.log(params['params'].id);
@@ -98,53 +101,90 @@ export class ViewDetialedComponent implements OnInit {
 
     //fetching virtual tour
 
-    
-    this.apiService.doGetRequest("/institute/virtual-tour/"+this.instituteIdDoc).subscribe(
-      data =>{
+
+    this.apiService.doGetRequest("/institute/virtual-tour/" + this.instituteIdDoc).subscribe(
+      data => {
         this.virtualTour = data['data']
-    
+
 
 
       },
-      error =>{
+      error => {
 
       }
     )
-
-
+    // fetching bank details
+    this.apiService.doGetRequest(endPoints.Get_bankDetails + this.instituteIdDoc).subscribe((returnData: any) => {
+      this.bankItems = returnData.data;
+      console.log(this.bankItems);
+    });
+    this.getplansByiNsituteId()
   }
 
-  Campustour()
-  {
-    window.open(this.virtualTour['campusTourVideoLink'],"_blank")
+  Campustour() {
+    window.open(this.virtualTour['campusTourVideoLink'], "_blank")
   }
-  viewcourse(item)
-  {
-    this.router.navigate(['/view-coursedetails/'+item?.item?.id+'/'+item.CourseName])
+  viewcourse(item) {
+    this.router.navigate(['/view-coursedetails/' + item?.item?.id + '/' + item.CourseName])
   }
-  classroom()
-  {
-    window.open(this.virtualTour['classRoomVideoLink'],"_blank")
+  classroom() {
+    window.open(this.virtualTour['classRoomVideoLink'], "_blank")
 
   }
-  lab()
-  {
-    window.open(this.virtualTour['labTourVideoLink'],"_blank")
+  lab() {
+    window.open(this.virtualTour['labTourVideoLink'], "_blank")
 
   }
-  library()
-  {
-    window.open(this.virtualTour['libraryTourVideoLink'],"_blank")
+  library() {
+    window.open(this.virtualTour['libraryTourVideoLink'], "_blank")
 
   }
-  Recreationalarea()
-  {
-    window.open(this.virtualTour['recreationAreaTourVideoLink'],"_blank")
+  Recreationalarea() {
+    window.open(this.virtualTour['recreationAreaTourVideoLink'], "_blank")
 
   }
-  hosteltour()
-  {
-    window.open(this.virtualTour['hostelTourVideoLink'],"_blank")
+  hosteltour() {
+    window.open(this.virtualTour['hostelTourVideoLink'], "_blank")
 
+  }
+  editdata(item) {
+    Swal.fire({
+      title: 'Enter Razorpay link account id',
+      input: 'textarea',
+      inputValidator: (result) => {
+        return !result && 'Enter Razorpay link account id'
+      },
+      showCancelButton: true,
+      confirmButtonText: `Ok`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        console.log(result)
+        this.updatebankdata(item.id, result.value);
+
+      }
+    })
+  }
+  updatebankdata(id, value) {
+    let req = {
+      "id": id,
+      "razorpay_linkedAccount_id": value
+    }
+    this.apiService.doPostRequest("institute/bank-details/update/",req).subscribe(
+      data =>{
+        this.toastr.success("Updated")
+        this.ngOnInit();
+      } 
+    )
+  }
+
+  getplansByiNsituteId()
+  {
+    this.apiService.doGetRequest("payment/subscription/institute/"+this.instituteIdDoc).subscribe(
+      data =>{
+        console.log(data);
+        this.subscriptionPLans = data['data'][0]
+      }
+    )
   }
 }

@@ -232,32 +232,33 @@
                     class="zmdi zmdi-assignment"></i>{{instituteInfo?.InstituteType.title}}</span>
             <br> -->
                 <p class="class-details uppercase">
-                   
+
                     Institute Code : <span class="duration"><i class="zmdi zmdi-time"></i>{{instituteInfo?.code}}</span>
                     <br>
 
-                   
+
 
 
 
 
 
                 </p>
-                <p> Principal Name  : <span class="duration"><i class="zmdi zmdi-time"></i>{{instituteInfo?.principalName}}</span></p>
+                <p> Principal Name : <span class="duration"><i
+                            class="zmdi zmdi-time"></i>{{instituteInfo?.principalName}}</span></p>
             </div>
             <div class="col-sm-6">
                 <span class="views"><i class="zmdi zmdi-download"></i><a
                         href="{{baseApiUrl}}{{highlights?.brochuresFile}}" target="_blank">Download Brochure</a></span>
                 <br>
                 <P><span class="views"><i class="zmdi zmdi-eye"></i>Hostel Boys:
-                    {{instituteInfo?.haveBoysHostel||instituteInfo?.haveGirlsHostel?"YES":"NO"}}</span></P>
-               
-               
+                        {{instituteInfo?.haveBoysHostel||instituteInfo?.haveGirlsHostel?"YES":"NO"}}</span></P>
+
+
                 <P> <span class="views"><i class="zmdi zmdi-eye"></i>Hostel Girls:
-                    {{instituteInfo?.haveGirlsHostel||instituteInfo?.haveGirlsHostel?"YES":"NO"}}</span></P>
-               
+                        {{instituteInfo?.haveGirlsHostel||instituteInfo?.haveGirlsHostel?"YES":"NO"}}</span></P>
+
                 <P><span class="views"><i class="zmdi zmdi-eye"></i>Hostel Annuval Fees:
-                    {{instituteInfo?.hostalAnnualFee}}</span></P>
+                        {{instituteInfo?.hostalAnnualFee}}</span></P>
             </div>
         </div>
     </div>
@@ -431,7 +432,7 @@
         </div>
         <div class="row">
             <div class="col-sm-6">
-               
+
                 <button class="search-teachers btnBottom" (click)="Campustour()">Campus Tour</button>
                 <button class="search-teachers btnBottom" (click)="classroom()">Class Room Tour</button>
                 <button class="search-teachers btnBottom" (click)="lab()">Lab Tour</button>
@@ -461,5 +462,69 @@
 
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>Bank Accounts Details</h4>
+                <hr style="    float: left;">
+            </div>
+            <div class="col-sm-6">
+
+            </div>
+
+            <div class="col-sm-4" *ngFor="let item of bankItems">
+
+                <div class="probootstrap-featured-news-box" style="background: #70707054;
+                                padding: 22px;">
+                    <div class="probootstrap-text">
+                        <h3 style="font-size: 14px;"> Account Holder's Name : {{item?.name}}</h3>
+                        <h3 style="font-size: 14px;">Account Number : {{item?.accountNumber}}
+                        </h3>
+                        <h3 style="font-size: 14px;">IFSC Code : {{item?.ifsc}}
+                        </h3>
+                        <h3 style="font-size: 14px;">Aadhar Number : {{item?.aadharNumber}}
+                        </h3>
+                        <h3 style="font-size: 14px;">Razorpay Linked Account id : {{item?.razorpay_linkedAccount_id}}
+                        </h3>
+
+                        <button class="coursebtn" (click)="editdata(item)">Link Razorpay Linked Account</button>
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!-- <div class="row" style="margin-top: 20px;">
+            <div class="col-sm-6">
+                <h4>Plan Choosed</h4>
+                <hr style="    float: left;">
+            </div>
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-4">
+                <div class="probootstrap-featured-news-box" style="background: #70707054;
+                                padding: 22px;">
+                    <div class="probootstrap-text">
+                        <h3 style="font-size: 14px;"> Plan Name: {{subscriptionPLans.Subscription_Tier.name}}</h3>
+                        <h3 style="font-size: 14px;">Amount : {{subscriptionPLans.Subscription_Tier.name}}
+                        </h3>
+                        <h3 style="font-size: 14px;">Courses : {{item?.ifsc}}
+                        </h3>
+                        
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
     </div>
 </div>
